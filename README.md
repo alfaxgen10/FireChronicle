@@ -227,7 +227,7 @@ Five predefined configurations (registry v2): `primary`, `modis_coarse_grid`, `m
 
 ```
 Python (pytest):     335 passed (tests/ and diagnostics/stage6e/)
-Frontend (vitest):   37 passed (6 files)
+Frontend (vitest):   41 passed (7 files)
 ```
 
 The Python suite covers schema validation, MODIS integer and VIIRS string confidence, normalization exclusions, grid geometry for both conventions (all four box edges, corners, exhaustive cell intersection), missing-data semantics, seasonal baselines and leave-one-year-out, the cross-sensor reliability rule (all 243 result combinations across the five configurations), overlap diagnostics, JSON contract checks, fixture schema checks, and manifest path portability and resolver safety. All test data are synthetic.
