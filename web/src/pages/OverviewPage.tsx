@@ -14,7 +14,7 @@ const destinations = [
 
 /** Planned work from the FireChronicle blueprint that is not part of this prototype. */
 const ROADMAP = [
-  { title: "Per-cell hotspot map", text: "Monthly detections drawn on the 0.25° grid instead of the study-area outline." },
+  { title: "Detection-level layer", text: "Individual detections with confidence and day/night filters, alongside the current per-cell map." },
   { title: "Evidence-grounded AI assistant", text: "Questions answered only through read-only tools over the verified exports, with cited values." },
   { title: "Longer MODIS record", text: "Extending the baseline back to 2001, with the collection change handled explicitly." },
   { title: "More regions", text: "Additional study areas with verified administrative boundaries and a land/water mask." },
@@ -245,7 +245,7 @@ export default function OverviewPage({ data, recent = null, harmonization = null
       <section className="ov-roadmap" aria-labelledby="overview-roadmap-title">
         <div className="ov-section-head">
           <h2 id="overview-roadmap-title">Prototype scope</h2>
-          <p>Built for the hackathon: real FIRMS data, sensor-specific calendar, harmonization test, reliability labels and exports. Planned next, not in this prototype:</p>
+          <p>Built for the hackathon: real FIRMS data, per-cell detection maps, sensor-specific calendar, harmonization test, reliability labels and exports. Planned next, not in this prototype:</p>
         </div>
         <ul className="ov-roadmap-list">
           {ROADMAP.map((item) => (
