@@ -151,6 +151,19 @@ export default function OverviewPage({ data, recent = null, harmonization = null
         <div className="ov-kpi accent"><span><Scale size={15} aria-hidden="true" /> Harmonization</span><strong>{harmonization ? "Evaluated" : "Not applied"}</strong><small>{harmonization ? `Not applied · ${nFolds} held-out years tested, sensors kept separate` : "Sensors kept separate"}</small></div>
       </div>
 
+      <section className="ov-users" aria-labelledby="overview-users-title">
+        <div className="ov-section-head">
+          <h2 id="overview-users-title">Who this is for</h2>
+          <p>A standard hotspot map shows where detections occurred. FireChronicle also tests whether a historical conclusion still holds when the satellite sensor or the analysis method changes.</p>
+        </div>
+        <ul className="ov-users-list">
+          <li><strong>Fire and haze researchers</strong><span>When the fire season peaks, which years and months were unusual, and whether both satellites agree.</span></li>
+          <li><strong>Regional land managers</strong><span>Which periods recur, and how much confidence each finding deserves before it informs planning.</span></li>
+          <li><strong>Educators and students</strong><span>A transparent worked example of using two satellite records carefully, with every limitation shown.</span></li>
+        </ul>
+        <p className="ov-users-note">For retrospective understanding only: FireChronicle is not a fire detection, alert or forecasting system.</p>
+      </section>
+
       <div className="ov-grid">
         <section className="ov-card ov-evidence" aria-labelledby="overview-evidence-title">
           <div className="ov-card-head">

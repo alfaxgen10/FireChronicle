@@ -3,6 +3,7 @@ import type { EChartsOption } from "echarts";
 import { CalendarRange, ChartNoAxesCombined, Grid2X2, Info } from "lucide-react";
 import type { CalendarMonth, FireChronicleData, RecentActivityData, SensorId } from "../data/contracts";
 import RecentActivityPanel from "../ui/RecentActivityPanel";
+import AgreementCalendar from "../ui/AgreementCalendar";
 import { formatAnomalyLabel, formatNumber, formatPercent, IN_SAMPLE_NOTE, monthName, PageHeader, Panel, SensorSelector, StatCard } from "../ui/shared";
 import ReactECharts from "../ui/charts";
 
@@ -142,6 +143,7 @@ export default function CalendarPage({ data, recent = null }: { data: FireChroni
           </label>
         </div>
       </PageHeader>
+      <AgreementCalendar data={data} recent={recent} />
       <div className="stat-grid three">
         <StatCard label="Archive window" value={`${years[0] ?? "—"} — ${years[years.length - 1] ?? "—"}`} detail="Declared seasonal baseline period" icon={<CalendarRange size={18} aria-hidden="true" />} tone="teal" />
         <StatCard label="Selected month" value={selected ? `${monthName(selected.month)} ${selected.year}` : "—"} detail={selected?.has_data ? `${formatNumber(selected.detection_count)} filtered detections` : "No detections / unavailable"} icon={<ChartNoAxesCombined size={18} aria-hidden="true" />} tone="orange" />
