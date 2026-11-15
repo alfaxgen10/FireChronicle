@@ -1,0 +1,70 @@
+{
+  "harmonization_evaluation_version": "1.0.0",
+  "status": "diagnostic",
+  "source": {
+    "file": "diagnostics/stage6e/results/results.json",
+    "sha256_lf_normalized": "4ddbbdd3ae69da07dd41ca93e19222ec1b96b8b338b4364af284d3af0871570f",
+    "input_calendar_sha256_lf_normalized": "b18a1483e03252aa2a0517b532e2ca1d3b463c9d33a59e0d09f27f4de8f2735b"
+  },
+  "definition": {
+    "predictor": "VIIRS occupied_cell_fraction",
+    "target": "MODIS occupied_cell_fraction",
+    "validation": "leave-one-year-out",
+    "years": [
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024
+    ],
+    "metric": "mean absolute error of occupied-cell fraction"
+  },
+  "methods": {
+    "A_seasonal": "Monthly ratio (median of per-year MODIS/VIIRS ratios for each calendar month)",
+    "B_global": "Single ratio (one median MODIS/VIIRS ratio for all months)",
+    "C_climatology": "No VIIRS information (training-year mean MODIS value for the month)"
+  },
+  "mae": {
+    "A_seasonal": 0.06596332362671126,
+    "B_global": 0.0731290262686495,
+    "C_climatology": 0.09693284444444444
+  },
+  "mae_by_year": {
+    "2019": {
+      "A_seasonal": 0.1030543877160759,
+      "B_global": 0.14018475972916988,
+      "C_climatology": 0.13368048333333332
+    },
+    "2020": {
+      "A_seasonal": 0.06580367418069814,
+      "B_global": 0.020210665396308416,
+      "C_climatology": 0.10289358333333333
+    },
+    "2021": {
+      "A_seasonal": 0.043662838002701126,
+      "B_global": 0.0392420672394161,
+      "C_climatology": 0.07523151666666668
+    },
+    "2022": {
+      "A_seasonal": 0.05833470842136545,
+      "B_global": 0.043133885830965724,
+      "C_climatology": 0.10891191666666666
+    },
+    "2023": {
+      "A_seasonal": 0.07041292150096713,
+      "B_global": 0.10796610386795263,
+      "C_climatology": 0.08564808333333335
+    },
+    "2024": {
+      "A_seasonal": 0.05451141193845985,
+      "B_global": 0.08803667554808427,
+      "C_climatology": 0.07523148333333333
+    }
+  },
+  "folds_A_better_than_B": 3,
+  "folds_A_better_than_C": 6,
+  "n_evaluated": 72,
+  "conclusion": "The experiment evaluates a seasonal predictive relationship between VIIRS and MODIS occupied-cell fractions. Improved prediction does not establish sensor equivalence, measurement calibration, validated fusion or sensor-independent fire activity.",
+  "decision": "MODIS and VIIRS are kept as separate records; no harmonized series is produced."
+}

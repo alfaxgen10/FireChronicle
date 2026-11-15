@@ -1,0 +1,86 @@
+{
+  "manifest_version": 2,
+  "processing_version": "0.3.0",
+  "generated_at": "2026-11-15T03:44:45.953771+00:00",
+  "sensor": "VIIRS_J1_C2",
+  "files": [
+    {
+      "filename": "fire_archive_J1V-C2_849851.csv",
+      "path": "data/raw/viirs/archive/fire_archive_J1V-C2_849851.csv",
+      "source_type": "archive",
+      "product_code": "J1V-C2",
+      "request_id": "849851",
+      "sha256": "6fcbb8326dd1f65f47ae8eecfb54a8884478f645042e6b86d4deaca4ed21062a",
+      "satellite_values": [
+        "N20"
+      ],
+      "instrument_values": [
+        "VIIRS"
+      ],
+      "product_versions": [
+        "2"
+      ],
+      "rows_raw": 168566,
+      "rows_accepted": 168566,
+      "validation_metrics": {
+        "malformed_coordinates": 0,
+        "malformed_timestamps": 0,
+        "out_of_bbox": 0,
+        "duplicate_rows": 0,
+        "low_confidence_rows": 8071
+      },
+      "date_min": "2019-01-01",
+      "date_max": "2026-07-31",
+      "bbox_actual": [
+        101.5,
+        -4.89996,
+        105.99992,
+        -1.00002
+      ],
+      "validation_errors": [],
+      "validation_warnings": [
+        "8071 low-confidence rows present (will be excluded in normalize)",
+        "rows_accepted is an upper-bound estimate; low-confidence and duplicate rows are excluded in normalize.py"
+      ]
+    },
+    {
+      "filename": "fire_nrt_J1V-C2_849851.csv",
+      "path": "data/raw/viirs/nrt/fire_nrt_J1V-C2_849851.csv",
+      "source_type": "nrt",
+      "product_code": "J1V-C2",
+      "request_id": "849851",
+      "sha256": "ae93db2cbc30d6f766edd571f6844ed9f5a5da032ee3a4422de9ec4271650ff9",
+      "satellite_values": [
+        "N20"
+      ],
+      "instrument_values": [
+        "VIIRS"
+      ],
+      "product_versions": [
+        "2.0NRT"
+      ],
+      "rows_raw": 66575,
+      "rows_accepted": 66575,
+      "validation_metrics": {
+        "malformed_coordinates": 0,
+        "malformed_timestamps": 0,
+        "out_of_bbox": 0,
+        "duplicate_rows": 0,
+        "low_confidence_rows": 3032
+      },
+      "date_min": "2026-08-01",
+      "date_max": "2026-10-31",
+      "bbox_actual": [
+        101.50282,
+        -4.89571,
+        105.99971,
+        -1.00001
+      ],
+      "validation_errors": [],
+      "validation_warnings": [
+        "3032 low-confidence rows present (will be excluded in normalize)",
+        "rows_accepted is an upper-bound estimate; low-confidence and duplicate rows are excluded in normalize.py"
+      ]
+    }
+  ]
+}

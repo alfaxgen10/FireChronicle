@@ -1,0 +1,247 @@
+{
+  "contract_version": "1.2.0",
+  "processing_version": "0.3.0",
+  "generated_at": "2026-11-15T04:02:08.088344+00:00",
+  "is_fixture": false,
+  "fixture_warning": null,
+  "region": {
+    "id": "south_sumatra",
+    "name": "South Sumatra, Indonesia",
+    "bbox": [
+      101.5,
+      -4.9,
+      106.0,
+      -1.0
+    ],
+    "source": "Engineering Blueprint §3.1"
+  },
+  "data_sources": [
+    {
+      "sensor": "MODIS_C61",
+      "product": "MODIS Collection 6 and 6.1 Active Fire",
+      "provider": "NASA FIRMS",
+      "url": "https://firms.modaps.eosdis.nasa.gov/",
+      "temporal_coverage": "2019–2024",
+      "access_method": "NASA FIRMS CSV downloads",
+      "product_versions": [
+        "6.03",
+        "6.1NRT",
+        "61.03"
+      ],
+      "source_types": [
+        "archive",
+        "nrt"
+      ],
+      "source_versions_by_type": {
+        "archive": [
+          "6.03",
+          "61.03"
+        ],
+        "nrt": [
+          "6.1NRT"
+        ]
+      },
+      "provenance_note": "Source manifests retain archive and NRT files separately; only records within the 2019–2024 analysis window are included."
+    },
+    {
+      "sensor": "VIIRS_J1_C2",
+      "product": "VIIRS NOAA-20 (J1) Collection 2 Active Fire",
+      "provider": "NASA FIRMS",
+      "url": "https://firms.modaps.eosdis.nasa.gov/",
+      "temporal_coverage": "2019–2024",
+      "access_method": "NASA FIRMS CSV downloads",
+      "product_versions": [
+        "2",
+        "2.0NRT"
+      ],
+      "source_types": [
+        "archive",
+        "nrt"
+      ],
+      "source_versions_by_type": {
+        "archive": [
+          "2"
+        ],
+        "nrt": [
+          "2.0NRT"
+        ]
+      },
+      "provenance_note": "Source manifests retain archive and NRT files separately; only records within the 2019–2024 analysis window are included."
+    }
+  ],
+  "processing_steps": [
+    "1. Ingest raw NASA FIRMS CSV files; record per-file manifest.",
+    "2. Validate schema, coordinates, timestamps and confidence flags.",
+    "3. Normalize: cast types, parse UTC datetime, exclude low-confidence and duplicate rows.",
+    "4. Spatial filter: clip to South Sumatra bounding box.",
+    "5. Grid assignment: floor(coordinate / resolution) × resolution; points on the upper box edges clamp into the last cell.",
+    "6. Monthly aggregation: occupied-cell fraction at 0.25° resolution using Convention B (every cell intersecting the box); Convention A reported as a sensitivity value.",
+    "7. Seasonal baseline: per-calendar-month median over baseline window.",
+    "8. Anomaly: observed value minus baseline median.",
+    "9. Elevated classification: above the 75th percentile of the same calendar month across baseline years.",
+    "10. Reliability: repeat classification across all predefined configurations; cross-sensor agreement labels need >= 2 evaluable configurations including >= 1 MODIS and >= 1 VIIRS."
+  ],
+  "index_definition": {
+    "name": "occupied_cell_fraction",
+    "formula": "eligible_cells_with_at_least_one_detection / total_eligible_cells",
+    "unit": "fraction of grid cells [0, 1] (dimensionless count ratio)",
+    "denominator": "Convention B: every grid cell intersecting the bounding box (288 at 0.25°, 72 at 0.5°)",
+    "not_area_weighted": true,
+    "interpretation_caveat": "occupied_cell_fraction counts grid cells (each eligible cell has weight 1, including boundary cells that extend outside the bounding box). It is not area-weighted and is not a burned-area, fire-count or severity measurement.",
+    "limitations": [
+      "Each eligible cell has weight 1; boundary cells partly outside the box count as whole cells.",
+      "Cell area varies with latitude; the index is not converted to km2.",
+      "Sensitive to grid resolution; tested at two resolutions.",
+      "Does not account for differences in sensor detection sensitivity.",
+      "Missing months are represented as null, not zero.",
+      "Short 2019–2024 baseline (max 6 observations per calendar month)."
+    ]
+  },
+  "baseline_window": {
+    "start": 2019,
+    "end": 2024,
+    "note": "Full available window; declared before analysis."
+  },
+  "geographic_support": {
+    "primary_convention": "B: every grid cell intersecting the bounding box",
+    "sensitivity_convention": "A: grid cells whose lower-left origin lies inside the bounding box",
+    "metric_definitions": {
+      "B": {
+        "role": "primary",
+        "field": "occupied_cell_fraction",
+        "eligible_cells": "every grid cell intersecting the bounding box",
+        "in_bounds_detections": "all included"
+      },
+      "A": {
+        "role": "sensitivity",
+        "field": "occupied_cell_fraction_convention_a",
+        "eligible_cells": "grid cells whose lower-left origin lies inside the bounding box",
+        "in_bounds_detections": "detections in the uncovered boundary strip excluded from the fraction"
+      }
+    },
+    "decision": "Convention B approved as primary; Convention A retained as sensitivity comparison (processing version 0.2.0).",
+    "note": "Convention B includes every in-bounds detection. Its partial boundary cells extend outside the box, so the cells cover more area than the box itself. Convention A covers only cells fully inside the box and leaves a southern strip uncovered. Areas are square degrees, not km2.",
+    "cell_counts": [
+      {
+        "convention": "B",
+        "resolution_deg": 0.25,
+        "eligible_cells": 288,
+        "fully_interior_cells": 270,
+        "partial_boundary_cells": 18
+      },
+      {
+        "convention": "A",
+        "resolution_deg": 0.25,
+        "eligible_cells": 270,
+        "fully_interior_cells": 270,
+        "partial_boundary_cells": 0
+      },
+      {
+        "convention": "B",
+        "resolution_deg": 0.5,
+        "eligible_cells": 72,
+        "fully_interior_cells": 63,
+        "partial_boundary_cells": 9
+      },
+      {
+        "convention": "A",
+        "resolution_deg": 0.5,
+        "eligible_cells": 63,
+        "fully_interior_cells": 63,
+        "partial_boundary_cells": 0
+      }
+    ],
+    "by_resolution": [
+      {
+        "primary_convention": "B",
+        "resolution_deg": 0.25,
+        "bbox_area_sq_deg": 17.55,
+        "convention_b_cells": 288,
+        "convention_b_fully_interior_cells": 270,
+        "convention_b_partial_boundary_cells": 18,
+        "convention_b_area_sq_deg": 18.0,
+        "convention_b_area_outside_bbox_sq_deg": 0.45,
+        "convention_a_cells": 270,
+        "convention_a_area_sq_deg": 16.875,
+        "convention_a_bbox_area_not_covered_sq_deg": 0.675,
+        "convention_a_bbox_not_covered_fraction": 0.038462,
+        "denominator_ratio_b_over_a": 1.066667
+      },
+      {
+        "primary_convention": "B",
+        "resolution_deg": 0.5,
+        "bbox_area_sq_deg": 17.55,
+        "convention_b_cells": 72,
+        "convention_b_fully_interior_cells": 63,
+        "convention_b_partial_boundary_cells": 9,
+        "convention_b_area_sq_deg": 18.0,
+        "convention_b_area_outside_bbox_sq_deg": 0.45,
+        "convention_a_cells": 63,
+        "convention_a_area_sq_deg": 15.75,
+        "convention_a_bbox_area_not_covered_sq_deg": 1.8,
+        "convention_a_bbox_not_covered_fraction": 0.102564,
+        "denominator_ratio_b_over_a": 1.142857
+      }
+    ]
+  },
+  "reliability_min_evaluable_configs": 2,
+  "reliability_cross_sensor_rule": {
+    "required_sensors": [
+      "MODIS_C61",
+      "VIIRS_J1_C2"
+    ],
+    "min_evaluable_per_sensor": 1
+  },
+  "reliability_configurations": {
+    "primary": {
+      "sensor": "MODIS_C61",
+      "grid_deg": 0.25,
+      "baseline_start": 2019,
+      "baseline_end": 2024,
+      "elevated_quantile": 0.75,
+      "grid_convention": "B"
+    },
+    "viirs_primary_grid": {
+      "sensor": "VIIRS_J1_C2",
+      "grid_deg": 0.25,
+      "baseline_start": 2019,
+      "baseline_end": 2024,
+      "elevated_quantile": 0.75,
+      "grid_convention": "B"
+    },
+    "modis_coarse_grid": {
+      "sensor": "MODIS_C61",
+      "grid_deg": 0.5,
+      "baseline_start": 2019,
+      "baseline_end": 2024,
+      "elevated_quantile": 0.75,
+      "grid_convention": "B"
+    },
+    "modis_strict_threshold": {
+      "sensor": "MODIS_C61",
+      "grid_deg": 0.25,
+      "baseline_start": 2019,
+      "baseline_end": 2024,
+      "elevated_quantile": 0.9,
+      "grid_convention": "B"
+    },
+    "viirs_coarse_grid": {
+      "sensor": "VIIRS_J1_C2",
+      "grid_deg": 0.5,
+      "baseline_start": 2019,
+      "baseline_end": 2024,
+      "elevated_quantile": 0.75,
+      "grid_convention": "B"
+    }
+  },
+  "reliability_config_registry_version": 2,
+  "scientific_guardrails": [
+    "Hotspots are satellite thermal-anomaly detections, not unique fires, burned area, severity, ignition causes or fire forecasts.",
+    "MODIS and VIIRS records are NOT directly interchangeable.",
+    "Common gridding does not equalise sensor sensitivity.",
+    "Missing observations are not confirmed zero activity.",
+    "Reliability labels are stability measures, not calibrated probabilities of truth.",
+    "Harmonization effectiveness has not been independently validated.",
+    "occupied_cell_fraction counts grid cells (each eligible cell has weight 1, including boundary cells that extend outside the bounding box). It is not area-weighted and is not a burned-area, fire-count or severity measurement."
+  ]
+}

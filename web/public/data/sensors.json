@@ -1,0 +1,545 @@
+{
+  "contract_version": "1.2.0",
+  "processing_version": "0.3.0",
+  "generated_at": "2026-11-15T03:44:49.349539+00:00",
+  "is_fixture": false,
+  "fixture_warning": null,
+  "region_id": "south_sumatra",
+  "sensor_metadata": {
+    "MODIS_C61": {
+      "label": "MODIS Terra / Aqua",
+      "available": true
+    },
+    "VIIRS_J1_C2": {
+      "label": "VIIRS NOAA-20 Collection 2",
+      "available": true
+    }
+  },
+  "overlap_diagnostics": {
+    "n_overlap_months": 72,
+    "overlap_start": "2019-01",
+    "overlap_end": "2024-12",
+    "modis_mean_ocf": 0.19502314814814814,
+    "viirs_mean_ocf": 0.42626350308641975,
+    "mean_ratio_viirs_to_modis": 3.125160648130395,
+    "median_ratio_viirs_to_modis": 2.8494152046783627,
+    "spearman_rho": 0.9366303031525535,
+    "spearman_p": 1.3119712039841447e-33,
+    "mean_absolute_difference": 0.23124035493827158,
+    "harmonization_supported": false,
+    "harmonization_note": "Harmonization not applied. Separate sensor series are retained. To apply cautious harmonization, provide a temporal holdout validation and confirm that the ratio is stable across seasons.",
+    "detail": [
+      {
+        "period": "2019-01",
+        "modis_ocf": 0.034722,
+        "viirs_ocf": 0.208333,
+        "ratio_viirs_modis": 6.0,
+        "abs_difference": 0.173611
+      },
+      {
+        "period": "2019-02",
+        "modis_ocf": 0.045139,
+        "viirs_ocf": 0.197917,
+        "ratio_viirs_modis": 4.3846,
+        "abs_difference": 0.152778
+      },
+      {
+        "period": "2019-03",
+        "modis_ocf": 0.069444,
+        "viirs_ocf": 0.319444,
+        "ratio_viirs_modis": 4.6,
+        "abs_difference": 0.25
+      },
+      {
+        "period": "2019-04",
+        "modis_ocf": 0.097222,
+        "viirs_ocf": 0.34375,
+        "ratio_viirs_modis": 3.5357,
+        "abs_difference": 0.246528
+      },
+      {
+        "period": "2019-05",
+        "modis_ocf": 0.263889,
+        "viirs_ocf": 0.479167,
+        "ratio_viirs_modis": 1.8158,
+        "abs_difference": 0.215278
+      },
+      {
+        "period": "2019-06",
+        "modis_ocf": 0.131944,
+        "viirs_ocf": 0.402778,
+        "ratio_viirs_modis": 3.0526,
+        "abs_difference": 0.270833
+      },
+      {
+        "period": "2019-07",
+        "modis_ocf": 0.350694,
+        "viirs_ocf": 0.697917,
+        "ratio_viirs_modis": 1.9901,
+        "abs_difference": 0.347222
+      },
+      {
+        "period": "2019-08",
+        "modis_ocf": 0.569444,
+        "viirs_ocf": 0.788194,
+        "ratio_viirs_modis": 1.3841,
+        "abs_difference": 0.21875
+      },
+      {
+        "period": "2019-09",
+        "modis_ocf": 0.684028,
+        "viirs_ocf": 0.8125,
+        "ratio_viirs_modis": 1.1878,
+        "abs_difference": 0.128472
+      },
+      {
+        "period": "2019-10",
+        "modis_ocf": 0.642361,
+        "viirs_ocf": 0.788194,
+        "ratio_viirs_modis": 1.227,
+        "abs_difference": 0.145833
+      },
+      {
+        "period": "2019-11",
+        "modis_ocf": 0.520833,
+        "viirs_ocf": 0.756944,
+        "ratio_viirs_modis": 1.4533,
+        "abs_difference": 0.236111
+      },
+      {
+        "period": "2019-12",
+        "modis_ocf": 0.114583,
+        "viirs_ocf": 0.413194,
+        "ratio_viirs_modis": 3.6061,
+        "abs_difference": 0.298611
+      },
+      {
+        "period": "2020-01",
+        "modis_ocf": 0.083333,
+        "viirs_ocf": 0.28125,
+        "ratio_viirs_modis": 3.375,
+        "abs_difference": 0.197917
+      },
+      {
+        "period": "2020-02",
+        "modis_ocf": 0.065972,
+        "viirs_ocf": 0.225694,
+        "ratio_viirs_modis": 3.4211,
+        "abs_difference": 0.159722
+      },
+      {
+        "period": "2020-03",
+        "modis_ocf": 0.111111,
+        "viirs_ocf": 0.385417,
+        "ratio_viirs_modis": 3.4688,
+        "abs_difference": 0.274306
+      },
+      {
+        "period": "2020-04",
+        "modis_ocf": 0.142361,
+        "viirs_ocf": 0.298611,
+        "ratio_viirs_modis": 2.0976,
+        "abs_difference": 0.15625
+      },
+      {
+        "period": "2020-05",
+        "modis_ocf": 0.097222,
+        "viirs_ocf": 0.298611,
+        "ratio_viirs_modis": 3.0714,
+        "abs_difference": 0.201389
+      },
+      {
+        "period": "2020-06",
+        "modis_ocf": 0.131944,
+        "viirs_ocf": 0.385417,
+        "ratio_viirs_modis": 2.9211,
+        "abs_difference": 0.253472
+      },
+      {
+        "period": "2020-07",
+        "modis_ocf": 0.142361,
+        "viirs_ocf": 0.447917,
+        "ratio_viirs_modis": 3.1463,
+        "abs_difference": 0.305556
+      },
+      {
+        "period": "2020-08",
+        "modis_ocf": 0.21875,
+        "viirs_ocf": 0.607639,
+        "ratio_viirs_modis": 2.7778,
+        "abs_difference": 0.388889
+      },
+      {
+        "period": "2020-09",
+        "modis_ocf": 0.131944,
+        "viirs_ocf": 0.465278,
+        "ratio_viirs_modis": 3.5263,
+        "abs_difference": 0.333333
+      },
+      {
+        "period": "2020-10",
+        "modis_ocf": 0.180556,
+        "viirs_ocf": 0.4375,
+        "ratio_viirs_modis": 2.4231,
+        "abs_difference": 0.256944
+      },
+      {
+        "period": "2020-11",
+        "modis_ocf": 0.086806,
+        "viirs_ocf": 0.319444,
+        "ratio_viirs_modis": 3.68,
+        "abs_difference": 0.232639
+      },
+      {
+        "period": "2020-12",
+        "modis_ocf": 0.100694,
+        "viirs_ocf": 0.295139,
+        "ratio_viirs_modis": 2.931,
+        "abs_difference": 0.194444
+      },
+      {
+        "period": "2021-01",
+        "modis_ocf": 0.059028,
+        "viirs_ocf": 0.184028,
+        "ratio_viirs_modis": 3.1176,
+        "abs_difference": 0.125
+      },
+      {
+        "period": "2021-02",
+        "modis_ocf": 0.072917,
+        "viirs_ocf": 0.305556,
+        "ratio_viirs_modis": 4.1905,
+        "abs_difference": 0.232639
+      },
+      {
+        "period": "2021-03",
+        "modis_ocf": 0.059028,
+        "viirs_ocf": 0.229167,
+        "ratio_viirs_modis": 3.8824,
+        "abs_difference": 0.170139
+      },
+      {
+        "period": "2021-04",
+        "modis_ocf": 0.104167,
+        "viirs_ocf": 0.28125,
+        "ratio_viirs_modis": 2.7,
+        "abs_difference": 0.177083
+      },
+      {
+        "period": "2021-05",
+        "modis_ocf": 0.131944,
+        "viirs_ocf": 0.364583,
+        "ratio_viirs_modis": 2.7632,
+        "abs_difference": 0.232639
+      },
+      {
+        "period": "2021-06",
+        "modis_ocf": 0.166667,
+        "viirs_ocf": 0.447917,
+        "ratio_viirs_modis": 2.6875,
+        "abs_difference": 0.28125
+      },
+      {
+        "period": "2021-07",
+        "modis_ocf": 0.357639,
+        "viirs_ocf": 0.621528,
+        "ratio_viirs_modis": 1.7379,
+        "abs_difference": 0.263889
+      },
+      {
+        "period": "2021-08",
+        "modis_ocf": 0.260417,
+        "viirs_ocf": 0.493056,
+        "ratio_viirs_modis": 1.8933,
+        "abs_difference": 0.232639
+      },
+      {
+        "period": "2021-09",
+        "modis_ocf": 0.25,
+        "viirs_ocf": 0.506944,
+        "ratio_viirs_modis": 2.0278,
+        "abs_difference": 0.256944
+      },
+      {
+        "period": "2021-10",
+        "modis_ocf": 0.180556,
+        "viirs_ocf": 0.496528,
+        "ratio_viirs_modis": 2.75,
+        "abs_difference": 0.315972
+      },
+      {
+        "period": "2021-11",
+        "modis_ocf": 0.097222,
+        "viirs_ocf": 0.267361,
+        "ratio_viirs_modis": 2.75,
+        "abs_difference": 0.170139
+      },
+      {
+        "period": "2021-12",
+        "modis_ocf": 0.076389,
+        "viirs_ocf": 0.357639,
+        "ratio_viirs_modis": 4.6818,
+        "abs_difference": 0.28125
+      },
+      {
+        "period": "2022-01",
+        "modis_ocf": 0.052083,
+        "viirs_ocf": 0.201389,
+        "ratio_viirs_modis": 3.8667,
+        "abs_difference": 0.149306
+      },
+      {
+        "period": "2022-02",
+        "modis_ocf": 0.052083,
+        "viirs_ocf": 0.322917,
+        "ratio_viirs_modis": 6.2,
+        "abs_difference": 0.270833
+      },
+      {
+        "period": "2022-03",
+        "modis_ocf": 0.190972,
+        "viirs_ocf": 0.385417,
+        "ratio_viirs_modis": 2.0182,
+        "abs_difference": 0.194444
+      },
+      {
+        "period": "2022-04",
+        "modis_ocf": 0.069444,
+        "viirs_ocf": 0.395833,
+        "ratio_viirs_modis": 5.7,
+        "abs_difference": 0.326389
+      },
+      {
+        "period": "2022-05",
+        "modis_ocf": 0.197917,
+        "viirs_ocf": 0.486111,
+        "ratio_viirs_modis": 2.4561,
+        "abs_difference": 0.288194
+      },
+      {
+        "period": "2022-06",
+        "modis_ocf": 0.118056,
+        "viirs_ocf": 0.381944,
+        "ratio_viirs_modis": 3.2353,
+        "abs_difference": 0.263889
+      },
+      {
+        "period": "2022-07",
+        "modis_ocf": 0.211806,
+        "viirs_ocf": 0.503472,
+        "ratio_viirs_modis": 2.377,
+        "abs_difference": 0.291667
+      },
+      {
+        "period": "2022-08",
+        "modis_ocf": 0.288194,
+        "viirs_ocf": 0.520833,
+        "ratio_viirs_modis": 1.8072,
+        "abs_difference": 0.232639
+      },
+      {
+        "period": "2022-09",
+        "modis_ocf": 0.180556,
+        "viirs_ocf": 0.489583,
+        "ratio_viirs_modis": 2.7115,
+        "abs_difference": 0.309028
+      },
+      {
+        "period": "2022-10",
+        "modis_ocf": 0.041667,
+        "viirs_ocf": 0.211806,
+        "ratio_viirs_modis": 5.0833,
+        "abs_difference": 0.170139
+      },
+      {
+        "period": "2022-11",
+        "modis_ocf": 0.055556,
+        "viirs_ocf": 0.322917,
+        "ratio_viirs_modis": 5.8125,
+        "abs_difference": 0.267361
+      },
+      {
+        "period": "2022-12",
+        "modis_ocf": 0.045139,
+        "viirs_ocf": 0.222222,
+        "ratio_viirs_modis": 4.9231,
+        "abs_difference": 0.177083
+      },
+      {
+        "period": "2023-01",
+        "modis_ocf": 0.045139,
+        "viirs_ocf": 0.208333,
+        "ratio_viirs_modis": 4.6154,
+        "abs_difference": 0.163194
+      },
+      {
+        "period": "2023-02",
+        "modis_ocf": 0.034722,
+        "viirs_ocf": 0.3125,
+        "ratio_viirs_modis": 9.0,
+        "abs_difference": 0.277778
+      },
+      {
+        "period": "2023-03",
+        "modis_ocf": 0.072917,
+        "viirs_ocf": 0.256944,
+        "ratio_viirs_modis": 3.5238,
+        "abs_difference": 0.184028
+      },
+      {
+        "period": "2023-04",
+        "modis_ocf": 0.145833,
+        "viirs_ocf": 0.440972,
+        "ratio_viirs_modis": 3.0238,
+        "abs_difference": 0.295139
+      },
+      {
+        "period": "2023-05",
+        "modis_ocf": 0.1875,
+        "viirs_ocf": 0.447917,
+        "ratio_viirs_modis": 2.3889,
+        "abs_difference": 0.260417
+      },
+      {
+        "period": "2023-06",
+        "modis_ocf": 0.190972,
+        "viirs_ocf": 0.454861,
+        "ratio_viirs_modis": 2.3818,
+        "abs_difference": 0.263889
+      },
+      {
+        "period": "2023-07",
+        "modis_ocf": 0.274306,
+        "viirs_ocf": 0.475694,
+        "ratio_viirs_modis": 1.7342,
+        "abs_difference": 0.201389
+      },
+      {
+        "period": "2023-08",
+        "modis_ocf": 0.368056,
+        "viirs_ocf": 0.666667,
+        "ratio_viirs_modis": 1.8113,
+        "abs_difference": 0.298611
+      },
+      {
+        "period": "2023-09",
+        "modis_ocf": 0.625,
+        "viirs_ocf": 0.777778,
+        "ratio_viirs_modis": 1.2444,
+        "abs_difference": 0.152778
+      },
+      {
+        "period": "2023-10",
+        "modis_ocf": 0.583333,
+        "viirs_ocf": 0.774306,
+        "ratio_viirs_modis": 1.3274,
+        "abs_difference": 0.190972
+      },
+      {
+        "period": "2023-11",
+        "modis_ocf": 0.340278,
+        "viirs_ocf": 0.625,
+        "ratio_viirs_modis": 1.8367,
+        "abs_difference": 0.284722
+      },
+      {
+        "period": "2023-12",
+        "modis_ocf": 0.180556,
+        "viirs_ocf": 0.423611,
+        "ratio_viirs_modis": 2.3462,
+        "abs_difference": 0.243056
+      },
+      {
+        "period": "2024-01",
+        "modis_ocf": 0.069444,
+        "viirs_ocf": 0.256944,
+        "ratio_viirs_modis": 3.7,
+        "abs_difference": 0.1875
+      },
+      {
+        "period": "2024-02",
+        "modis_ocf": 0.017361,
+        "viirs_ocf": 0.170139,
+        "ratio_viirs_modis": 9.8,
+        "abs_difference": 0.152778
+      },
+      {
+        "period": "2024-03",
+        "modis_ocf": 0.107639,
+        "viirs_ocf": 0.336806,
+        "ratio_viirs_modis": 3.129,
+        "abs_difference": 0.229167
+      },
+      {
+        "period": "2024-04",
+        "modis_ocf": 0.069444,
+        "viirs_ocf": 0.239583,
+        "ratio_viirs_modis": 3.45,
+        "abs_difference": 0.170139
+      },
+      {
+        "period": "2024-05",
+        "modis_ocf": 0.111111,
+        "viirs_ocf": 0.354167,
+        "ratio_viirs_modis": 3.1875,
+        "abs_difference": 0.243056
+      },
+      {
+        "period": "2024-06",
+        "modis_ocf": 0.118056,
+        "viirs_ocf": 0.315972,
+        "ratio_viirs_modis": 2.6765,
+        "abs_difference": 0.197917
+      },
+      {
+        "period": "2024-07",
+        "modis_ocf": 0.427083,
+        "viirs_ocf": 0.684028,
+        "ratio_viirs_modis": 1.6016,
+        "abs_difference": 0.256944
+      },
+      {
+        "period": "2024-08",
+        "modis_ocf": 0.420139,
+        "viirs_ocf": 0.711806,
+        "ratio_viirs_modis": 1.6942,
+        "abs_difference": 0.291667
+      },
+      {
+        "period": "2024-09",
+        "modis_ocf": 0.527778,
+        "viirs_ocf": 0.704861,
+        "ratio_viirs_modis": 1.3355,
+        "abs_difference": 0.177083
+      },
+      {
+        "period": "2024-10",
+        "modis_ocf": 0.541667,
+        "viirs_ocf": 0.736111,
+        "ratio_viirs_modis": 1.359,
+        "abs_difference": 0.194444
+      },
+      {
+        "period": "2024-11",
+        "modis_ocf": 0.131944,
+        "viirs_ocf": 0.315972,
+        "ratio_viirs_modis": 2.3947,
+        "abs_difference": 0.184028
+      },
+      {
+        "period": "2024-12",
+        "modis_ocf": 0.114583,
+        "viirs_ocf": 0.34375,
+        "ratio_viirs_modis": 3.0,
+        "abs_difference": 0.229167
+      }
+    ],
+    "limitations": [
+      "MODIS (~1 km) and VIIRS (~375 m) have different native pixel resolutions; VIIRS detects more small fires at the same grid resolution.",
+      "Terra, Aqua (MODIS) and NOAA-20 (VIIRS J1) have different equatorial crossing times; diurnal fire behaviour affects what each sensor observes.",
+      "The overlap window (2019-2024) is too short to separate sensor differences from interannual climate variability.",
+      "ratio_viirs_to_modis is an observation-level statistic, NOT a calibration factor.",
+      "Harmonization is not applied unless explicitly validated with holdout data."
+    ]
+  }
+}

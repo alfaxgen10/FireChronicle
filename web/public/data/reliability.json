@@ -1,0 +1,2480 @@
+{
+  "contract_version": "1.2.0",
+  "processing_version": "0.3.0",
+  "generated_at": "2026-11-15T03:44:49.356945+00:00",
+  "region_id": "south_sumatra",
+  "stability_labels": {
+    "consistently_elevated": "All evaluated configurations classify this period as elevated",
+    "not_elevated": "All evaluated configurations classify this period as not elevated",
+    "classification_sensitive": "Configurations disagree on the classification",
+    "insufficient_evidence": "Fewer than min_evaluable_configs configurations produced an evaluable result",
+    "insufficient_cross_sensor_evidence": "Enough configurations were evaluable, but not every required sensor had an evaluable configuration; no cross-sensor agreement label is assigned. See sensor_specific for single-sensor findings."
+  },
+  "sensor_specific_labels": {
+    "elevated": "All evaluable configurations of this sensor classify the period as elevated",
+    "not_elevated": "All evaluable configurations of this sensor classify the period as not elevated",
+    "mixed": "This sensor's evaluable configurations disagree",
+    "insufficient_evidence": "This sensor has no evaluable configuration for the period"
+  },
+  "cross_sensor_rule": {
+    "min_evaluable_configs": 2,
+    "required_sensors": [
+      "MODIS_C61",
+      "VIIRS_J1_C2"
+    ],
+    "min_evaluable_per_sensor": 1,
+    "evaluable_means": "configuration result is consistently_elevated or not_elevated",
+    "never_counted_as_agreement": [
+      "insufficient_evidence configuration results",
+      "configurations that did not run (n_not_run), e.g. sensor data absent"
+    ]
+  },
+  "configurations": {
+    "primary": {
+      "sensor": "MODIS_C61",
+      "grid_deg": 0.25,
+      "baseline_start": 2019,
+      "baseline_end": 2024,
+      "elevated_quantile": 0.75,
+      "grid_convention": "B"
+    },
+    "viirs_primary_grid": {
+      "sensor": "VIIRS_J1_C2",
+      "grid_deg": 0.25,
+      "baseline_start": 2019,
+      "baseline_end": 2024,
+      "elevated_quantile": 0.75,
+      "grid_convention": "B"
+    },
+    "modis_coarse_grid": {
+      "sensor": "MODIS_C61",
+      "grid_deg": 0.5,
+      "baseline_start": 2019,
+      "baseline_end": 2024,
+      "elevated_quantile": 0.75,
+      "grid_convention": "B"
+    },
+    "modis_strict_threshold": {
+      "sensor": "MODIS_C61",
+      "grid_deg": 0.25,
+      "baseline_start": 2019,
+      "baseline_end": 2024,
+      "elevated_quantile": 0.9,
+      "grid_convention": "B"
+    },
+    "viirs_coarse_grid": {
+      "sensor": "VIIRS_J1_C2",
+      "grid_deg": 0.5,
+      "baseline_start": 2019,
+      "baseline_end": 2024,
+      "elevated_quantile": 0.75,
+      "grid_convention": "B"
+    }
+  },
+  "config_registry_version": 2,
+  "config_registry_history": {
+    "1": [
+      "primary",
+      "viirs_primary_grid",
+      "modis_coarse_grid",
+      "modis_strict_threshold"
+    ],
+    "2": [
+      "primary",
+      "viirs_primary_grid",
+      "modis_coarse_grid",
+      "modis_strict_threshold",
+      "viirs_coarse_grid"
+    ]
+  },
+  "per_period": [
+    {
+      "period": "2019-01",
+      "year": 2019,
+      "month": 1,
+      "stability_label": "not_elevated",
+      "n_configs_total": 5,
+      "n_elevated": 0,
+      "n_not_elevated": 5,
+      "n_insufficient": 0,
+      "n_evaluable": 5,
+      "min_evaluable_required": 2,
+      "evaluable_fraction": 1.0,
+      "n_not_run": 0,
+      "cross_sensor_requirement_met": true,
+      "sensors_lacking_evaluable_config": [],
+      "sensor_specific": {
+        "MODIS_C61": {
+          "n_configs": 3,
+          "n_evaluable": 3,
+          "n_elevated": 0,
+          "n_not_elevated": 3,
+          "label": "not_elevated"
+        },
+        "VIIRS_J1_C2": {
+          "n_configs": 2,
+          "n_evaluable": 2,
+          "n_elevated": 0,
+          "n_not_elevated": 2,
+          "label": "not_elevated"
+        }
+      },
+      "fixture_configs": 0
+    },
+    {
+      "period": "2019-02",
+      "year": 2019,
+      "month": 2,
+      "stability_label": "not_elevated",
+      "n_configs_total": 5,
+      "n_elevated": 0,
+      "n_not_elevated": 5,
+      "n_insufficient": 0,
+      "n_evaluable": 5,
+      "min_evaluable_required": 2,
+      "evaluable_fraction": 1.0,
+      "n_not_run": 0,
+      "cross_sensor_requirement_met": true,
+      "sensors_lacking_evaluable_config": [],
+      "sensor_specific": {
+        "MODIS_C61": {
+          "n_configs": 3,
+          "n_evaluable": 3,
+          "n_elevated": 0,
+          "n_not_elevated": 3,
+          "label": "not_elevated"
+        },
+        "VIIRS_J1_C2": {
+          "n_configs": 2,
+          "n_evaluable": 2,
+          "n_elevated": 0,
+          "n_not_elevated": 2,
+          "label": "not_elevated"
+        }
+      },
+      "fixture_configs": 0
+    },
+    {
+      "period": "2019-03",
+      "year": 2019,
+      "month": 3,
+      "stability_label": "not_elevated",
+      "n_configs_total": 5,
+      "n_elevated": 0,
+      "n_not_elevated": 5,
+      "n_insufficient": 0,
+      "n_evaluable": 5,
+      "min_evaluable_required": 2,
+      "evaluable_fraction": 1.0,
+      "n_not_run": 0,
+      "cross_sensor_requirement_met": true,
+      "sensors_lacking_evaluable_config": [],
+      "sensor_specific": {
+        "MODIS_C61": {
+          "n_configs": 3,
+          "n_evaluable": 3,
+          "n_elevated": 0,
+          "n_not_elevated": 3,
+          "label": "not_elevated"
+        },
+        "VIIRS_J1_C2": {
+          "n_configs": 2,
+          "n_evaluable": 2,
+          "n_elevated": 0,
+          "n_not_elevated": 2,
+          "label": "not_elevated"
+        }
+      },
+      "fixture_configs": 0
+    },
+    {
+      "period": "2019-04",
+      "year": 2019,
+      "month": 4,
+      "stability_label": "classification_sensitive",
+      "n_configs_total": 5,
+      "n_elevated": 1,
+      "n_not_elevated": 4,
+      "n_insufficient": 0,
+      "n_evaluable": 5,
+      "min_evaluable_required": 2,
+      "evaluable_fraction": 1.0,
+      "n_not_run": 0,
+      "cross_sensor_requirement_met": true,
+      "sensors_lacking_evaluable_config": [],
+      "sensor_specific": {
+        "MODIS_C61": {
+          "n_configs": 3,
+          "n_evaluable": 3,
+          "n_elevated": 0,
+          "n_not_elevated": 3,
+          "label": "not_elevated"
+        },
+        "VIIRS_J1_C2": {
+          "n_configs": 2,
+          "n_evaluable": 2,
+          "n_elevated": 1,
+          "n_not_elevated": 1,
+          "label": "mixed"
+        }
+      },
+      "fixture_configs": 0
+    },
+    {
+      "period": "2019-05",
+      "year": 2019,
+      "month": 5,
+      "stability_label": "classification_sensitive",
+      "n_configs_total": 5,
+      "n_elevated": 4,
+      "n_not_elevated": 1,
+      "n_insufficient": 0,
+      "n_evaluable": 5,
+      "min_evaluable_required": 2,
+      "evaluable_fraction": 1.0,
+      "n_not_run": 0,
+      "cross_sensor_requirement_met": true,
+      "sensors_lacking_evaluable_config": [],
+      "sensor_specific": {
+        "MODIS_C61": {
+          "n_configs": 3,
+          "n_evaluable": 3,
+          "n_elevated": 3,
+          "n_not_elevated": 0,
+          "label": "elevated"
+        },
+        "VIIRS_J1_C2": {
+          "n_configs": 2,
+          "n_evaluable": 2,
+          "n_elevated": 1,
+          "n_not_elevated": 1,
+          "label": "mixed"
+        }
+      },
+      "fixture_configs": 0
+    },
+    {
+      "period": "2019-06",
+      "year": 2019,
+      "month": 6,
+      "stability_label": "classification_sensitive",
+      "n_configs_total": 5,
+      "n_elevated": 1,
+      "n_not_elevated": 4,
+      "n_insufficient": 0,
+      "n_evaluable": 5,
+      "min_evaluable_required": 2,
+      "evaluable_fraction": 1.0,
+      "n_not_run": 0,
+      "cross_sensor_requirement_met": true,
+      "sensors_lacking_evaluable_config": [],
+      "sensor_specific": {
+        "MODIS_C61": {
+          "n_configs": 3,
+          "n_evaluable": 3,
+          "n_elevated": 0,
+          "n_not_elevated": 3,
+          "label": "not_elevated"
+        },
+        "VIIRS_J1_C2": {
+          "n_configs": 2,
+          "n_evaluable": 2,
+          "n_elevated": 1,
+          "n_not_elevated": 1,
+          "label": "mixed"
+        }
+      },
+      "fixture_configs": 0
+    },
+    {
+      "period": "2019-07",
+      "year": 2019,
+      "month": 7,
+      "stability_label": "classification_sensitive",
+      "n_configs_total": 5,
+      "n_elevated": 2,
+      "n_not_elevated": 3,
+      "n_insufficient": 0,
+      "n_evaluable": 5,
+      "min_evaluable_required": 2,
+      "evaluable_fraction": 1.0,
+      "n_not_run": 0,
+      "cross_sensor_requirement_met": true,
+      "sensors_lacking_evaluable_config": [],
+      "sensor_specific": {
+        "MODIS_C61": {
+          "n_configs": 3,
+          "n_evaluable": 3,
+          "n_elevated": 0,
+          "n_not_elevated": 3,
+          "label": "not_elevated"
+        },
+        "VIIRS_J1_C2": {
+          "n_configs": 2,
+          "n_evaluable": 2,
+          "n_elevated": 2,
+          "n_not_elevated": 0,
+          "label": "elevated"
+        }
+      },
+      "fixture_configs": 0
+    },
+    {
+      "period": "2019-08",
+      "year": 2019,
+      "month": 8,
+      "stability_label": "classification_sensitive",
+      "n_configs_total": 5,
+      "n_elevated": 4,
+      "n_not_elevated": 1,
+      "n_insufficient": 0,
+      "n_evaluable": 5,
+      "min_evaluable_required": 2,
+      "evaluable_fraction": 1.0,
+      "n_not_run": 0,
+      "cross_sensor_requirement_met": true,
+      "sensors_lacking_evaluable_config": [],
+      "sensor_specific": {
+        "MODIS_C61": {
+          "n_configs": 3,
+          "n_evaluable": 3,
+          "n_elevated": 3,
+          "n_not_elevated": 0,
+          "label": "elevated"
+        },
+        "VIIRS_J1_C2": {
+          "n_configs": 2,
+          "n_evaluable": 2,
+          "n_elevated": 1,
+          "n_not_elevated": 1,
+          "label": "mixed"
+        }
+      },
+      "fixture_configs": 0
+    },
+    {
+      "period": "2019-09",
+      "year": 2019,
+      "month": 9,
+      "stability_label": "consistently_elevated",
+      "n_configs_total": 5,
+      "n_elevated": 5,
+      "n_not_elevated": 0,
+      "n_insufficient": 0,
+      "n_evaluable": 5,
+      "min_evaluable_required": 2,
+      "evaluable_fraction": 1.0,
+      "n_not_run": 0,
+      "cross_sensor_requirement_met": true,
+      "sensors_lacking_evaluable_config": [],
+      "sensor_specific": {
+        "MODIS_C61": {
+          "n_configs": 3,
+          "n_evaluable": 3,
+          "n_elevated": 3,
+          "n_not_elevated": 0,
+          "label": "elevated"
+        },
+        "VIIRS_J1_C2": {
+          "n_configs": 2,
+          "n_evaluable": 2,
+          "n_elevated": 2,
+          "n_not_elevated": 0,
+          "label": "elevated"
+        }
+      },
+      "fixture_configs": 0
+    },
+    {
+      "period": "2019-10",
+      "year": 2019,
+      "month": 10,
+      "stability_label": "consistently_elevated",
+      "n_configs_total": 5,
+      "n_elevated": 5,
+      "n_not_elevated": 0,
+      "n_insufficient": 0,
+      "n_evaluable": 5,
+      "min_evaluable_required": 2,
+      "evaluable_fraction": 1.0,
+      "n_not_run": 0,
+      "cross_sensor_requirement_met": true,
+      "sensors_lacking_evaluable_config": [],
+      "sensor_specific": {
+        "MODIS_C61": {
+          "n_configs": 3,
+          "n_evaluable": 3,
+          "n_elevated": 3,
+          "n_not_elevated": 0,
+          "label": "elevated"
+        },
+        "VIIRS_J1_C2": {
+          "n_configs": 2,
+          "n_evaluable": 2,
+          "n_elevated": 2,
+          "n_not_elevated": 0,
+          "label": "elevated"
+        }
+      },
+      "fixture_configs": 0
+    },
+    {
+      "period": "2019-11",
+      "year": 2019,
+      "month": 11,
+      "stability_label": "consistently_elevated",
+      "n_configs_total": 5,
+      "n_elevated": 5,
+      "n_not_elevated": 0,
+      "n_insufficient": 0,
+      "n_evaluable": 5,
+      "min_evaluable_required": 2,
+      "evaluable_fraction": 1.0,
+      "n_not_run": 0,
+      "cross_sensor_requirement_met": true,
+      "sensors_lacking_evaluable_config": [],
+      "sensor_specific": {
+        "MODIS_C61": {
+          "n_configs": 3,
+          "n_evaluable": 3,
+          "n_elevated": 3,
+          "n_not_elevated": 0,
+          "label": "elevated"
+        },
+        "VIIRS_J1_C2": {
+          "n_configs": 2,
+          "n_evaluable": 2,
+          "n_elevated": 2,
+          "n_not_elevated": 0,
+          "label": "elevated"
+        }
+      },
+      "fixture_configs": 0
+    },
+    {
+      "period": "2019-12",
+      "year": 2019,
+      "month": 12,
+      "stability_label": "classification_sensitive",
+      "n_configs_total": 5,
+      "n_elevated": 1,
+      "n_not_elevated": 4,
+      "n_insufficient": 0,
+      "n_evaluable": 5,
+      "min_evaluable_required": 2,
+      "evaluable_fraction": 1.0,
+      "n_not_run": 0,
+      "cross_sensor_requirement_met": true,
+      "sensors_lacking_evaluable_config": [],
+      "sensor_specific": {
+        "MODIS_C61": {
+          "n_configs": 3,
+          "n_evaluable": 3,
+          "n_elevated": 0,
+          "n_not_elevated": 3,
+          "label": "not_elevated"
+        },
+        "VIIRS_J1_C2": {
+          "n_configs": 2,
+          "n_evaluable": 2,
+          "n_elevated": 1,
+          "n_not_elevated": 1,
+          "label": "mixed"
+        }
+      },
+      "fixture_configs": 0
+    },
+    {
+      "period": "2020-01",
+      "year": 2020,
+      "month": 1,
+      "stability_label": "consistently_elevated",
+      "n_configs_total": 5,
+      "n_elevated": 5,
+      "n_not_elevated": 0,
+      "n_insufficient": 0,
+      "n_evaluable": 5,
+      "min_evaluable_required": 2,
+      "evaluable_fraction": 1.0,
+      "n_not_run": 0,
+      "cross_sensor_requirement_met": true,
+      "sensors_lacking_evaluable_config": [],
+      "sensor_specific": {
+        "MODIS_C61": {
+          "n_configs": 3,
+          "n_evaluable": 3,
+          "n_elevated": 3,
+          "n_not_elevated": 0,
+          "label": "elevated"
+        },
+        "VIIRS_J1_C2": {
+          "n_configs": 2,
+          "n_evaluable": 2,
+          "n_elevated": 2,
+          "n_not_elevated": 0,
+          "label": "elevated"
+        }
+      },
+      "fixture_configs": 0
+    },
+    {
+      "period": "2020-02",
+      "year": 2020,
+      "month": 2,
+      "stability_label": "classification_sensitive",
+      "n_configs_total": 5,
+      "n_elevated": 2,
+      "n_not_elevated": 3,
+      "n_insufficient": 0,
+      "n_evaluable": 5,
+      "min_evaluable_required": 2,
+      "evaluable_fraction": 1.0,
+      "n_not_run": 0,
+      "cross_sensor_requirement_met": true,
+      "sensors_lacking_evaluable_config": [],
+      "sensor_specific": {
+        "MODIS_C61": {
+          "n_configs": 3,
+          "n_evaluable": 3,
+          "n_elevated": 2,
+          "n_not_elevated": 1,
+          "label": "mixed"
+        },
+        "VIIRS_J1_C2": {
+          "n_configs": 2,
+          "n_evaluable": 2,
+          "n_elevated": 0,
+          "n_not_elevated": 2,
+          "label": "not_elevated"
+        }
+      },
+      "fixture_configs": 0
+    },
+    {
+      "period": "2020-03",
+      "year": 2020,
+      "month": 3,
+      "stability_label": "classification_sensitive",
+      "n_configs_total": 5,
+      "n_elevated": 3,
+      "n_not_elevated": 2,
+      "n_insufficient": 0,
+      "n_evaluable": 5,
+      "min_evaluable_required": 2,
+      "evaluable_fraction": 1.0,
+      "n_not_run": 0,
+      "cross_sensor_requirement_met": true,
+      "sensors_lacking_evaluable_config": [],
+      "sensor_specific": {
+        "MODIS_C61": {
+          "n_configs": 3,
+          "n_evaluable": 3,
+          "n_elevated": 1,
+          "n_not_elevated": 2,
+          "label": "mixed"
+        },
+        "VIIRS_J1_C2": {
+          "n_configs": 2,
+          "n_evaluable": 2,
+          "n_elevated": 2,
+          "n_not_elevated": 0,
+          "label": "elevated"
+        }
+      },
+      "fixture_configs": 0
+    },
+    {
+      "period": "2020-04",
+      "year": 2020,
+      "month": 4,
+      "stability_label": "classification_sensitive",
+      "n_configs_total": 5,
+      "n_elevated": 2,
+      "n_not_elevated": 3,
+      "n_insufficient": 0,
+      "n_evaluable": 5,
+      "min_evaluable_required": 2,
+      "evaluable_fraction": 1.0,
+      "n_not_run": 0,
+      "cross_sensor_requirement_met": true,
+      "sensors_lacking_evaluable_config": [],
+      "sensor_specific": {
+        "MODIS_C61": {
+          "n_configs": 3,
+          "n_evaluable": 3,
+          "n_elevated": 2,
+          "n_not_elevated": 1,
+          "label": "mixed"
+        },
+        "VIIRS_J1_C2": {
+          "n_configs": 2,
+          "n_evaluable": 2,
+          "n_elevated": 0,
+          "n_not_elevated": 2,
+          "label": "not_elevated"
+        }
+      },
+      "fixture_configs": 0
+    },
+    {
+      "period": "2020-05",
+      "year": 2020,
+      "month": 5,
+      "stability_label": "not_elevated",
+      "n_configs_total": 5,
+      "n_elevated": 0,
+      "n_not_elevated": 5,
+      "n_insufficient": 0,
+      "n_evaluable": 5,
+      "min_evaluable_required": 2,
+      "evaluable_fraction": 1.0,
+      "n_not_run": 0,
+      "cross_sensor_requirement_met": true,
+      "sensors_lacking_evaluable_config": [],
+      "sensor_specific": {
+        "MODIS_C61": {
+          "n_configs": 3,
+          "n_evaluable": 3,
+          "n_elevated": 0,
+          "n_not_elevated": 3,
+          "label": "not_elevated"
+        },
+        "VIIRS_J1_C2": {
+          "n_configs": 2,
+          "n_evaluable": 2,
+          "n_elevated": 0,
+          "n_not_elevated": 2,
+          "label": "not_elevated"
+        }
+      },
+      "fixture_configs": 0
+    },
+    {
+      "period": "2020-06",
+      "year": 2020,
+      "month": 6,
+      "stability_label": "not_elevated",
+      "n_configs_total": 5,
+      "n_elevated": 0,
+      "n_not_elevated": 5,
+      "n_insufficient": 0,
+      "n_evaluable": 5,
+      "min_evaluable_required": 2,
+      "evaluable_fraction": 1.0,
+      "n_not_run": 0,
+      "cross_sensor_requirement_met": true,
+      "sensors_lacking_evaluable_config": [],
+      "sensor_specific": {
+        "MODIS_C61": {
+          "n_configs": 3,
+          "n_evaluable": 3,
+          "n_elevated": 0,
+          "n_not_elevated": 3,
+          "label": "not_elevated"
+        },
+        "VIIRS_J1_C2": {
+          "n_configs": 2,
+          "n_evaluable": 2,
+          "n_elevated": 0,
+          "n_not_elevated": 2,
+          "label": "not_elevated"
+        }
+      },
+      "fixture_configs": 0
+    },
+    {
+      "period": "2020-07",
+      "year": 2020,
+      "month": 7,
+      "stability_label": "not_elevated",
+      "n_configs_total": 5,
+      "n_elevated": 0,
+      "n_not_elevated": 5,
+      "n_insufficient": 0,
+      "n_evaluable": 5,
+      "min_evaluable_required": 2,
+      "evaluable_fraction": 1.0,
+      "n_not_run": 0,
+      "cross_sensor_requirement_met": true,
+      "sensors_lacking_evaluable_config": [],
+      "sensor_specific": {
+        "MODIS_C61": {
+          "n_configs": 3,
+          "n_evaluable": 3,
+          "n_elevated": 0,
+          "n_not_elevated": 3,
+          "label": "not_elevated"
+        },
+        "VIIRS_J1_C2": {
+          "n_configs": 2,
+          "n_evaluable": 2,
+          "n_elevated": 0,
+          "n_not_elevated": 2,
+          "label": "not_elevated"
+        }
+      },
+      "fixture_configs": 0
+    },
+    {
+      "period": "2020-08",
+      "year": 2020,
+      "month": 8,
+      "stability_label": "not_elevated",
+      "n_configs_total": 5,
+      "n_elevated": 0,
+      "n_not_elevated": 5,
+      "n_insufficient": 0,
+      "n_evaluable": 5,
+      "min_evaluable_required": 2,
+      "evaluable_fraction": 1.0,
+      "n_not_run": 0,
+      "cross_sensor_requirement_met": true,
+      "sensors_lacking_evaluable_config": [],
+      "sensor_specific": {
+        "MODIS_C61": {
+          "n_configs": 3,
+          "n_evaluable": 3,
+          "n_elevated": 0,
+          "n_not_elevated": 3,
+          "label": "not_elevated"
+        },
+        "VIIRS_J1_C2": {
+          "n_configs": 2,
+          "n_evaluable": 2,
+          "n_elevated": 0,
+          "n_not_elevated": 2,
+          "label": "not_elevated"
+        }
+      },
+      "fixture_configs": 0
+    },
+    {
+      "period": "2020-09",
+      "year": 2020,
+      "month": 9,
+      "stability_label": "not_elevated",
+      "n_configs_total": 5,
+      "n_elevated": 0,
+      "n_not_elevated": 5,
+      "n_insufficient": 0,
+      "n_evaluable": 5,
+      "min_evaluable_required": 2,
+      "evaluable_fraction": 1.0,
+      "n_not_run": 0,
+      "cross_sensor_requirement_met": true,
+      "sensors_lacking_evaluable_config": [],
+      "sensor_specific": {
+        "MODIS_C61": {
+          "n_configs": 3,
+          "n_evaluable": 3,
+          "n_elevated": 0,
+          "n_not_elevated": 3,
+          "label": "not_elevated"
+        },
+        "VIIRS_J1_C2": {
+          "n_configs": 2,
+          "n_evaluable": 2,
+          "n_elevated": 0,
+          "n_not_elevated": 2,
+          "label": "not_elevated"
+        }
+      },
+      "fixture_configs": 0
+    },
+    {
+      "period": "2020-10",
+      "year": 2020,
+      "month": 10,
+      "stability_label": "not_elevated",
+      "n_configs_total": 5,
+      "n_elevated": 0,
+      "n_not_elevated": 5,
+      "n_insufficient": 0,
+      "n_evaluable": 5,
+      "min_evaluable_required": 2,
+      "evaluable_fraction": 1.0,
+      "n_not_run": 0,
+      "cross_sensor_requirement_met": true,
+      "sensors_lacking_evaluable_config": [],
+      "sensor_specific": {
+        "MODIS_C61": {
+          "n_configs": 3,
+          "n_evaluable": 3,
+          "n_elevated": 0,
+          "n_not_elevated": 3,
+          "label": "not_elevated"
+        },
+        "VIIRS_J1_C2": {
+          "n_configs": 2,
+          "n_evaluable": 2,
+          "n_elevated": 0,
+          "n_not_elevated": 2,
+          "label": "not_elevated"
+        }
+      },
+      "fixture_configs": 0
+    },
+    {
+      "period": "2020-11",
+      "year": 2020,
+      "month": 11,
+      "stability_label": "not_elevated",
+      "n_configs_total": 5,
+      "n_elevated": 0,
+      "n_not_elevated": 5,
+      "n_insufficient": 0,
+      "n_evaluable": 5,
+      "min_evaluable_required": 2,
+      "evaluable_fraction": 1.0,
+      "n_not_run": 0,
+      "cross_sensor_requirement_met": true,
+      "sensors_lacking_evaluable_config": [],
+      "sensor_specific": {
+        "MODIS_C61": {
+          "n_configs": 3,
+          "n_evaluable": 3,
+          "n_elevated": 0,
+          "n_not_elevated": 3,
+          "label": "not_elevated"
+        },
+        "VIIRS_J1_C2": {
+          "n_configs": 2,
+          "n_evaluable": 2,
+          "n_elevated": 0,
+          "n_not_elevated": 2,
+          "label": "not_elevated"
+        }
+      },
+      "fixture_configs": 0
+    },
+    {
+      "period": "2020-12",
+      "year": 2020,
+      "month": 12,
+      "stability_label": "not_elevated",
+      "n_configs_total": 5,
+      "n_elevated": 0,
+      "n_not_elevated": 5,
+      "n_insufficient": 0,
+      "n_evaluable": 5,
+      "min_evaluable_required": 2,
+      "evaluable_fraction": 1.0,
+      "n_not_run": 0,
+      "cross_sensor_requirement_met": true,
+      "sensors_lacking_evaluable_config": [],
+      "sensor_specific": {
+        "MODIS_C61": {
+          "n_configs": 3,
+          "n_evaluable": 3,
+          "n_elevated": 0,
+          "n_not_elevated": 3,
+          "label": "not_elevated"
+        },
+        "VIIRS_J1_C2": {
+          "n_configs": 2,
+          "n_evaluable": 2,
+          "n_elevated": 0,
+          "n_not_elevated": 2,
+          "label": "not_elevated"
+        }
+      },
+      "fixture_configs": 0
+    },
+    {
+      "period": "2021-01",
+      "year": 2021,
+      "month": 1,
+      "stability_label": "not_elevated",
+      "n_configs_total": 5,
+      "n_elevated": 0,
+      "n_not_elevated": 5,
+      "n_insufficient": 0,
+      "n_evaluable": 5,
+      "min_evaluable_required": 2,
+      "evaluable_fraction": 1.0,
+      "n_not_run": 0,
+      "cross_sensor_requirement_met": true,
+      "sensors_lacking_evaluable_config": [],
+      "sensor_specific": {
+        "MODIS_C61": {
+          "n_configs": 3,
+          "n_evaluable": 3,
+          "n_elevated": 0,
+          "n_not_elevated": 3,
+          "label": "not_elevated"
+        },
+        "VIIRS_J1_C2": {
+          "n_configs": 2,
+          "n_evaluable": 2,
+          "n_elevated": 0,
+          "n_not_elevated": 2,
+          "label": "not_elevated"
+        }
+      },
+      "fixture_configs": 0
+    },
+    {
+      "period": "2021-02",
+      "year": 2021,
+      "month": 2,
+      "stability_label": "classification_sensitive",
+      "n_configs_total": 5,
+      "n_elevated": 4,
+      "n_not_elevated": 1,
+      "n_insufficient": 0,
+      "n_evaluable": 5,
+      "min_evaluable_required": 2,
+      "evaluable_fraction": 1.0,
+      "n_not_run": 0,
+      "cross_sensor_requirement_met": true,
+      "sensors_lacking_evaluable_config": [],
+      "sensor_specific": {
+        "MODIS_C61": {
+          "n_configs": 3,
+          "n_evaluable": 3,
+          "n_elevated": 3,
+          "n_not_elevated": 0,
+          "label": "elevated"
+        },
+        "VIIRS_J1_C2": {
+          "n_configs": 2,
+          "n_evaluable": 2,
+          "n_elevated": 1,
+          "n_not_elevated": 1,
+          "label": "mixed"
+        }
+      },
+      "fixture_configs": 0
+    },
+    {
+      "period": "2021-03",
+      "year": 2021,
+      "month": 3,
+      "stability_label": "not_elevated",
+      "n_configs_total": 5,
+      "n_elevated": 0,
+      "n_not_elevated": 5,
+      "n_insufficient": 0,
+      "n_evaluable": 5,
+      "min_evaluable_required": 2,
+      "evaluable_fraction": 1.0,
+      "n_not_run": 0,
+      "cross_sensor_requirement_met": true,
+      "sensors_lacking_evaluable_config": [],
+      "sensor_specific": {
+        "MODIS_C61": {
+          "n_configs": 3,
+          "n_evaluable": 3,
+          "n_elevated": 0,
+          "n_not_elevated": 3,
+          "label": "not_elevated"
+        },
+        "VIIRS_J1_C2": {
+          "n_configs": 2,
+          "n_evaluable": 2,
+          "n_elevated": 0,
+          "n_not_elevated": 2,
+          "label": "not_elevated"
+        }
+      },
+      "fixture_configs": 0
+    },
+    {
+      "period": "2021-04",
+      "year": 2021,
+      "month": 4,
+      "stability_label": "not_elevated",
+      "n_configs_total": 5,
+      "n_elevated": 0,
+      "n_not_elevated": 5,
+      "n_insufficient": 0,
+      "n_evaluable": 5,
+      "min_evaluable_required": 2,
+      "evaluable_fraction": 1.0,
+      "n_not_run": 0,
+      "cross_sensor_requirement_met": true,
+      "sensors_lacking_evaluable_config": [],
+      "sensor_specific": {
+        "MODIS_C61": {
+          "n_configs": 3,
+          "n_evaluable": 3,
+          "n_elevated": 0,
+          "n_not_elevated": 3,
+          "label": "not_elevated"
+        },
+        "VIIRS_J1_C2": {
+          "n_configs": 2,
+          "n_evaluable": 2,
+          "n_elevated": 0,
+          "n_not_elevated": 2,
+          "label": "not_elevated"
+        }
+      },
+      "fixture_configs": 0
+    },
+    {
+      "period": "2021-05",
+      "year": 2021,
+      "month": 5,
+      "stability_label": "not_elevated",
+      "n_configs_total": 5,
+      "n_elevated": 0,
+      "n_not_elevated": 5,
+      "n_insufficient": 0,
+      "n_evaluable": 5,
+      "min_evaluable_required": 2,
+      "evaluable_fraction": 1.0,
+      "n_not_run": 0,
+      "cross_sensor_requirement_met": true,
+      "sensors_lacking_evaluable_config": [],
+      "sensor_specific": {
+        "MODIS_C61": {
+          "n_configs": 3,
+          "n_evaluable": 3,
+          "n_elevated": 0,
+          "n_not_elevated": 3,
+          "label": "not_elevated"
+        },
+        "VIIRS_J1_C2": {
+          "n_configs": 2,
+          "n_evaluable": 2,
+          "n_elevated": 0,
+          "n_not_elevated": 2,
+          "label": "not_elevated"
+        }
+      },
+      "fixture_configs": 0
+    },
+    {
+      "period": "2021-06",
+      "year": 2021,
+      "month": 6,
+      "stability_label": "classification_sensitive",
+      "n_configs_total": 5,
+      "n_elevated": 4,
+      "n_not_elevated": 1,
+      "n_insufficient": 0,
+      "n_evaluable": 5,
+      "min_evaluable_required": 2,
+      "evaluable_fraction": 1.0,
+      "n_not_run": 0,
+      "cross_sensor_requirement_met": true,
+      "sensors_lacking_evaluable_config": [],
+      "sensor_specific": {
+        "MODIS_C61": {
+          "n_configs": 3,
+          "n_evaluable": 3,
+          "n_elevated": 2,
+          "n_not_elevated": 1,
+          "label": "mixed"
+        },
+        "VIIRS_J1_C2": {
+          "n_configs": 2,
+          "n_evaluable": 2,
+          "n_elevated": 2,
+          "n_not_elevated": 0,
+          "label": "elevated"
+        }
+      },
+      "fixture_configs": 0
+    },
+    {
+      "period": "2021-07",
+      "year": 2021,
+      "month": 7,
+      "stability_label": "classification_sensitive",
+      "n_configs_total": 5,
+      "n_elevated": 1,
+      "n_not_elevated": 4,
+      "n_insufficient": 0,
+      "n_evaluable": 5,
+      "min_evaluable_required": 2,
+      "evaluable_fraction": 1.0,
+      "n_not_run": 0,
+      "cross_sensor_requirement_met": true,
+      "sensors_lacking_evaluable_config": [],
+      "sensor_specific": {
+        "MODIS_C61": {
+          "n_configs": 3,
+          "n_evaluable": 3,
+          "n_elevated": 1,
+          "n_not_elevated": 2,
+          "label": "mixed"
+        },
+        "VIIRS_J1_C2": {
+          "n_configs": 2,
+          "n_evaluable": 2,
+          "n_elevated": 0,
+          "n_not_elevated": 2,
+          "label": "not_elevated"
+        }
+      },
+      "fixture_configs": 0
+    },
+    {
+      "period": "2021-08",
+      "year": 2021,
+      "month": 8,
+      "stability_label": "not_elevated",
+      "n_configs_total": 5,
+      "n_elevated": 0,
+      "n_not_elevated": 5,
+      "n_insufficient": 0,
+      "n_evaluable": 5,
+      "min_evaluable_required": 2,
+      "evaluable_fraction": 1.0,
+      "n_not_run": 0,
+      "cross_sensor_requirement_met": true,
+      "sensors_lacking_evaluable_config": [],
+      "sensor_specific": {
+        "MODIS_C61": {
+          "n_configs": 3,
+          "n_evaluable": 3,
+          "n_elevated": 0,
+          "n_not_elevated": 3,
+          "label": "not_elevated"
+        },
+        "VIIRS_J1_C2": {
+          "n_configs": 2,
+          "n_evaluable": 2,
+          "n_elevated": 0,
+          "n_not_elevated": 2,
+          "label": "not_elevated"
+        }
+      },
+      "fixture_configs": 0
+    },
+    {
+      "period": "2021-09",
+      "year": 2021,
+      "month": 9,
+      "stability_label": "not_elevated",
+      "n_configs_total": 5,
+      "n_elevated": 0,
+      "n_not_elevated": 5,
+      "n_insufficient": 0,
+      "n_evaluable": 5,
+      "min_evaluable_required": 2,
+      "evaluable_fraction": 1.0,
+      "n_not_run": 0,
+      "cross_sensor_requirement_met": true,
+      "sensors_lacking_evaluable_config": [],
+      "sensor_specific": {
+        "MODIS_C61": {
+          "n_configs": 3,
+          "n_evaluable": 3,
+          "n_elevated": 0,
+          "n_not_elevated": 3,
+          "label": "not_elevated"
+        },
+        "VIIRS_J1_C2": {
+          "n_configs": 2,
+          "n_evaluable": 2,
+          "n_elevated": 0,
+          "n_not_elevated": 2,
+          "label": "not_elevated"
+        }
+      },
+      "fixture_configs": 0
+    },
+    {
+      "period": "2021-10",
+      "year": 2021,
+      "month": 10,
+      "stability_label": "not_elevated",
+      "n_configs_total": 5,
+      "n_elevated": 0,
+      "n_not_elevated": 5,
+      "n_insufficient": 0,
+      "n_evaluable": 5,
+      "min_evaluable_required": 2,
+      "evaluable_fraction": 1.0,
+      "n_not_run": 0,
+      "cross_sensor_requirement_met": true,
+      "sensors_lacking_evaluable_config": [],
+      "sensor_specific": {
+        "MODIS_C61": {
+          "n_configs": 3,
+          "n_evaluable": 3,
+          "n_elevated": 0,
+          "n_not_elevated": 3,
+          "label": "not_elevated"
+        },
+        "VIIRS_J1_C2": {
+          "n_configs": 2,
+          "n_evaluable": 2,
+          "n_elevated": 0,
+          "n_not_elevated": 2,
+          "label": "not_elevated"
+        }
+      },
+      "fixture_configs": 0
+    },
+    {
+      "period": "2021-11",
+      "year": 2021,
+      "month": 11,
+      "stability_label": "not_elevated",
+      "n_configs_total": 5,
+      "n_elevated": 0,
+      "n_not_elevated": 5,
+      "n_insufficient": 0,
+      "n_evaluable": 5,
+      "min_evaluable_required": 2,
+      "evaluable_fraction": 1.0,
+      "n_not_run": 0,
+      "cross_sensor_requirement_met": true,
+      "sensors_lacking_evaluable_config": [],
+      "sensor_specific": {
+        "MODIS_C61": {
+          "n_configs": 3,
+          "n_evaluable": 3,
+          "n_elevated": 0,
+          "n_not_elevated": 3,
+          "label": "not_elevated"
+        },
+        "VIIRS_J1_C2": {
+          "n_configs": 2,
+          "n_evaluable": 2,
+          "n_elevated": 0,
+          "n_not_elevated": 2,
+          "label": "not_elevated"
+        }
+      },
+      "fixture_configs": 0
+    },
+    {
+      "period": "2021-12",
+      "year": 2021,
+      "month": 12,
+      "stability_label": "not_elevated",
+      "n_configs_total": 5,
+      "n_elevated": 0,
+      "n_not_elevated": 5,
+      "n_insufficient": 0,
+      "n_evaluable": 5,
+      "min_evaluable_required": 2,
+      "evaluable_fraction": 1.0,
+      "n_not_run": 0,
+      "cross_sensor_requirement_met": true,
+      "sensors_lacking_evaluable_config": [],
+      "sensor_specific": {
+        "MODIS_C61": {
+          "n_configs": 3,
+          "n_evaluable": 3,
+          "n_elevated": 0,
+          "n_not_elevated": 3,
+          "label": "not_elevated"
+        },
+        "VIIRS_J1_C2": {
+          "n_configs": 2,
+          "n_evaluable": 2,
+          "n_elevated": 0,
+          "n_not_elevated": 2,
+          "label": "not_elevated"
+        }
+      },
+      "fixture_configs": 0
+    },
+    {
+      "period": "2022-01",
+      "year": 2022,
+      "month": 1,
+      "stability_label": "not_elevated",
+      "n_configs_total": 5,
+      "n_elevated": 0,
+      "n_not_elevated": 5,
+      "n_insufficient": 0,
+      "n_evaluable": 5,
+      "min_evaluable_required": 2,
+      "evaluable_fraction": 1.0,
+      "n_not_run": 0,
+      "cross_sensor_requirement_met": true,
+      "sensors_lacking_evaluable_config": [],
+      "sensor_specific": {
+        "MODIS_C61": {
+          "n_configs": 3,
+          "n_evaluable": 3,
+          "n_elevated": 0,
+          "n_not_elevated": 3,
+          "label": "not_elevated"
+        },
+        "VIIRS_J1_C2": {
+          "n_configs": 2,
+          "n_evaluable": 2,
+          "n_elevated": 0,
+          "n_not_elevated": 2,
+          "label": "not_elevated"
+        }
+      },
+      "fixture_configs": 0
+    },
+    {
+      "period": "2022-02",
+      "year": 2022,
+      "month": 2,
+      "stability_label": "classification_sensitive",
+      "n_configs_total": 5,
+      "n_elevated": 2,
+      "n_not_elevated": 3,
+      "n_insufficient": 0,
+      "n_evaluable": 5,
+      "min_evaluable_required": 2,
+      "evaluable_fraction": 1.0,
+      "n_not_run": 0,
+      "cross_sensor_requirement_met": true,
+      "sensors_lacking_evaluable_config": [],
+      "sensor_specific": {
+        "MODIS_C61": {
+          "n_configs": 3,
+          "n_evaluable": 3,
+          "n_elevated": 0,
+          "n_not_elevated": 3,
+          "label": "not_elevated"
+        },
+        "VIIRS_J1_C2": {
+          "n_configs": 2,
+          "n_evaluable": 2,
+          "n_elevated": 2,
+          "n_not_elevated": 0,
+          "label": "elevated"
+        }
+      },
+      "fixture_configs": 0
+    },
+    {
+      "period": "2022-03",
+      "year": 2022,
+      "month": 3,
+      "stability_label": "classification_sensitive",
+      "n_configs_total": 5,
+      "n_elevated": 4,
+      "n_not_elevated": 1,
+      "n_insufficient": 0,
+      "n_evaluable": 5,
+      "min_evaluable_required": 2,
+      "evaluable_fraction": 1.0,
+      "n_not_run": 0,
+      "cross_sensor_requirement_met": true,
+      "sensors_lacking_evaluable_config": [],
+      "sensor_specific": {
+        "MODIS_C61": {
+          "n_configs": 3,
+          "n_evaluable": 3,
+          "n_elevated": 3,
+          "n_not_elevated": 0,
+          "label": "elevated"
+        },
+        "VIIRS_J1_C2": {
+          "n_configs": 2,
+          "n_evaluable": 2,
+          "n_elevated": 1,
+          "n_not_elevated": 1,
+          "label": "mixed"
+        }
+      },
+      "fixture_configs": 0
+    },
+    {
+      "period": "2022-04",
+      "year": 2022,
+      "month": 4,
+      "stability_label": "classification_sensitive",
+      "n_configs_total": 5,
+      "n_elevated": 2,
+      "n_not_elevated": 3,
+      "n_insufficient": 0,
+      "n_evaluable": 5,
+      "min_evaluable_required": 2,
+      "evaluable_fraction": 1.0,
+      "n_not_run": 0,
+      "cross_sensor_requirement_met": true,
+      "sensors_lacking_evaluable_config": [],
+      "sensor_specific": {
+        "MODIS_C61": {
+          "n_configs": 3,
+          "n_evaluable": 3,
+          "n_elevated": 0,
+          "n_not_elevated": 3,
+          "label": "not_elevated"
+        },
+        "VIIRS_J1_C2": {
+          "n_configs": 2,
+          "n_evaluable": 2,
+          "n_elevated": 2,
+          "n_not_elevated": 0,
+          "label": "elevated"
+        }
+      },
+      "fixture_configs": 0
+    },
+    {
+      "period": "2022-05",
+      "year": 2022,
+      "month": 5,
+      "stability_label": "classification_sensitive",
+      "n_configs_total": 5,
+      "n_elevated": 4,
+      "n_not_elevated": 1,
+      "n_insufficient": 0,
+      "n_evaluable": 5,
+      "min_evaluable_required": 2,
+      "evaluable_fraction": 1.0,
+      "n_not_run": 0,
+      "cross_sensor_requirement_met": true,
+      "sensors_lacking_evaluable_config": [],
+      "sensor_specific": {
+        "MODIS_C61": {
+          "n_configs": 3,
+          "n_evaluable": 3,
+          "n_elevated": 2,
+          "n_not_elevated": 1,
+          "label": "mixed"
+        },
+        "VIIRS_J1_C2": {
+          "n_configs": 2,
+          "n_evaluable": 2,
+          "n_elevated": 2,
+          "n_not_elevated": 0,
+          "label": "elevated"
+        }
+      },
+      "fixture_configs": 0
+    },
+    {
+      "period": "2022-06",
+      "year": 2022,
+      "month": 6,
+      "stability_label": "not_elevated",
+      "n_configs_total": 5,
+      "n_elevated": 0,
+      "n_not_elevated": 5,
+      "n_insufficient": 0,
+      "n_evaluable": 5,
+      "min_evaluable_required": 2,
+      "evaluable_fraction": 1.0,
+      "n_not_run": 0,
+      "cross_sensor_requirement_met": true,
+      "sensors_lacking_evaluable_config": [],
+      "sensor_specific": {
+        "MODIS_C61": {
+          "n_configs": 3,
+          "n_evaluable": 3,
+          "n_elevated": 0,
+          "n_not_elevated": 3,
+          "label": "not_elevated"
+        },
+        "VIIRS_J1_C2": {
+          "n_configs": 2,
+          "n_evaluable": 2,
+          "n_elevated": 0,
+          "n_not_elevated": 2,
+          "label": "not_elevated"
+        }
+      },
+      "fixture_configs": 0
+    },
+    {
+      "period": "2022-07",
+      "year": 2022,
+      "month": 7,
+      "stability_label": "not_elevated",
+      "n_configs_total": 5,
+      "n_elevated": 0,
+      "n_not_elevated": 5,
+      "n_insufficient": 0,
+      "n_evaluable": 5,
+      "min_evaluable_required": 2,
+      "evaluable_fraction": 1.0,
+      "n_not_run": 0,
+      "cross_sensor_requirement_met": true,
+      "sensors_lacking_evaluable_config": [],
+      "sensor_specific": {
+        "MODIS_C61": {
+          "n_configs": 3,
+          "n_evaluable": 3,
+          "n_elevated": 0,
+          "n_not_elevated": 3,
+          "label": "not_elevated"
+        },
+        "VIIRS_J1_C2": {
+          "n_configs": 2,
+          "n_evaluable": 2,
+          "n_elevated": 0,
+          "n_not_elevated": 2,
+          "label": "not_elevated"
+        }
+      },
+      "fixture_configs": 0
+    },
+    {
+      "period": "2022-08",
+      "year": 2022,
+      "month": 8,
+      "stability_label": "not_elevated",
+      "n_configs_total": 5,
+      "n_elevated": 0,
+      "n_not_elevated": 5,
+      "n_insufficient": 0,
+      "n_evaluable": 5,
+      "min_evaluable_required": 2,
+      "evaluable_fraction": 1.0,
+      "n_not_run": 0,
+      "cross_sensor_requirement_met": true,
+      "sensors_lacking_evaluable_config": [],
+      "sensor_specific": {
+        "MODIS_C61": {
+          "n_configs": 3,
+          "n_evaluable": 3,
+          "n_elevated": 0,
+          "n_not_elevated": 3,
+          "label": "not_elevated"
+        },
+        "VIIRS_J1_C2": {
+          "n_configs": 2,
+          "n_evaluable": 2,
+          "n_elevated": 0,
+          "n_not_elevated": 2,
+          "label": "not_elevated"
+        }
+      },
+      "fixture_configs": 0
+    },
+    {
+      "period": "2022-09",
+      "year": 2022,
+      "month": 9,
+      "stability_label": "not_elevated",
+      "n_configs_total": 5,
+      "n_elevated": 0,
+      "n_not_elevated": 5,
+      "n_insufficient": 0,
+      "n_evaluable": 5,
+      "min_evaluable_required": 2,
+      "evaluable_fraction": 1.0,
+      "n_not_run": 0,
+      "cross_sensor_requirement_met": true,
+      "sensors_lacking_evaluable_config": [],
+      "sensor_specific": {
+        "MODIS_C61": {
+          "n_configs": 3,
+          "n_evaluable": 3,
+          "n_elevated": 0,
+          "n_not_elevated": 3,
+          "label": "not_elevated"
+        },
+        "VIIRS_J1_C2": {
+          "n_configs": 2,
+          "n_evaluable": 2,
+          "n_elevated": 0,
+          "n_not_elevated": 2,
+          "label": "not_elevated"
+        }
+      },
+      "fixture_configs": 0
+    },
+    {
+      "period": "2022-10",
+      "year": 2022,
+      "month": 10,
+      "stability_label": "not_elevated",
+      "n_configs_total": 5,
+      "n_elevated": 0,
+      "n_not_elevated": 5,
+      "n_insufficient": 0,
+      "n_evaluable": 5,
+      "min_evaluable_required": 2,
+      "evaluable_fraction": 1.0,
+      "n_not_run": 0,
+      "cross_sensor_requirement_met": true,
+      "sensors_lacking_evaluable_config": [],
+      "sensor_specific": {
+        "MODIS_C61": {
+          "n_configs": 3,
+          "n_evaluable": 3,
+          "n_elevated": 0,
+          "n_not_elevated": 3,
+          "label": "not_elevated"
+        },
+        "VIIRS_J1_C2": {
+          "n_configs": 2,
+          "n_evaluable": 2,
+          "n_elevated": 0,
+          "n_not_elevated": 2,
+          "label": "not_elevated"
+        }
+      },
+      "fixture_configs": 0
+    },
+    {
+      "period": "2022-11",
+      "year": 2022,
+      "month": 11,
+      "stability_label": "not_elevated",
+      "n_configs_total": 5,
+      "n_elevated": 0,
+      "n_not_elevated": 5,
+      "n_insufficient": 0,
+      "n_evaluable": 5,
+      "min_evaluable_required": 2,
+      "evaluable_fraction": 1.0,
+      "n_not_run": 0,
+      "cross_sensor_requirement_met": true,
+      "sensors_lacking_evaluable_config": [],
+      "sensor_specific": {
+        "MODIS_C61": {
+          "n_configs": 3,
+          "n_evaluable": 3,
+          "n_elevated": 0,
+          "n_not_elevated": 3,
+          "label": "not_elevated"
+        },
+        "VIIRS_J1_C2": {
+          "n_configs": 2,
+          "n_evaluable": 2,
+          "n_elevated": 0,
+          "n_not_elevated": 2,
+          "label": "not_elevated"
+        }
+      },
+      "fixture_configs": 0
+    },
+    {
+      "period": "2022-12",
+      "year": 2022,
+      "month": 12,
+      "stability_label": "not_elevated",
+      "n_configs_total": 5,
+      "n_elevated": 0,
+      "n_not_elevated": 5,
+      "n_insufficient": 0,
+      "n_evaluable": 5,
+      "min_evaluable_required": 2,
+      "evaluable_fraction": 1.0,
+      "n_not_run": 0,
+      "cross_sensor_requirement_met": true,
+      "sensors_lacking_evaluable_config": [],
+      "sensor_specific": {
+        "MODIS_C61": {
+          "n_configs": 3,
+          "n_evaluable": 3,
+          "n_elevated": 0,
+          "n_not_elevated": 3,
+          "label": "not_elevated"
+        },
+        "VIIRS_J1_C2": {
+          "n_configs": 2,
+          "n_evaluable": 2,
+          "n_elevated": 0,
+          "n_not_elevated": 2,
+          "label": "not_elevated"
+        }
+      },
+      "fixture_configs": 0
+    },
+    {
+      "period": "2023-01",
+      "year": 2023,
+      "month": 1,
+      "stability_label": "not_elevated",
+      "n_configs_total": 5,
+      "n_elevated": 0,
+      "n_not_elevated": 5,
+      "n_insufficient": 0,
+      "n_evaluable": 5,
+      "min_evaluable_required": 2,
+      "evaluable_fraction": 1.0,
+      "n_not_run": 0,
+      "cross_sensor_requirement_met": true,
+      "sensors_lacking_evaluable_config": [],
+      "sensor_specific": {
+        "MODIS_C61": {
+          "n_configs": 3,
+          "n_evaluable": 3,
+          "n_elevated": 0,
+          "n_not_elevated": 3,
+          "label": "not_elevated"
+        },
+        "VIIRS_J1_C2": {
+          "n_configs": 2,
+          "n_evaluable": 2,
+          "n_elevated": 0,
+          "n_not_elevated": 2,
+          "label": "not_elevated"
+        }
+      },
+      "fixture_configs": 0
+    },
+    {
+      "period": "2023-02",
+      "year": 2023,
+      "month": 2,
+      "stability_label": "classification_sensitive",
+      "n_configs_total": 5,
+      "n_elevated": 1,
+      "n_not_elevated": 4,
+      "n_insufficient": 0,
+      "n_evaluable": 5,
+      "min_evaluable_required": 2,
+      "evaluable_fraction": 1.0,
+      "n_not_run": 0,
+      "cross_sensor_requirement_met": true,
+      "sensors_lacking_evaluable_config": [],
+      "sensor_specific": {
+        "MODIS_C61": {
+          "n_configs": 3,
+          "n_evaluable": 3,
+          "n_elevated": 0,
+          "n_not_elevated": 3,
+          "label": "not_elevated"
+        },
+        "VIIRS_J1_C2": {
+          "n_configs": 2,
+          "n_evaluable": 2,
+          "n_elevated": 1,
+          "n_not_elevated": 1,
+          "label": "mixed"
+        }
+      },
+      "fixture_configs": 0
+    },
+    {
+      "period": "2023-03",
+      "year": 2023,
+      "month": 3,
+      "stability_label": "not_elevated",
+      "n_configs_total": 5,
+      "n_elevated": 0,
+      "n_not_elevated": 5,
+      "n_insufficient": 0,
+      "n_evaluable": 5,
+      "min_evaluable_required": 2,
+      "evaluable_fraction": 1.0,
+      "n_not_run": 0,
+      "cross_sensor_requirement_met": true,
+      "sensors_lacking_evaluable_config": [],
+      "sensor_specific": {
+        "MODIS_C61": {
+          "n_configs": 3,
+          "n_evaluable": 3,
+          "n_elevated": 0,
+          "n_not_elevated": 3,
+          "label": "not_elevated"
+        },
+        "VIIRS_J1_C2": {
+          "n_configs": 2,
+          "n_evaluable": 2,
+          "n_elevated": 0,
+          "n_not_elevated": 2,
+          "label": "not_elevated"
+        }
+      },
+      "fixture_configs": 0
+    },
+    {
+      "period": "2023-04",
+      "year": 2023,
+      "month": 4,
+      "stability_label": "classification_sensitive",
+      "n_configs_total": 5,
+      "n_elevated": 4,
+      "n_not_elevated": 1,
+      "n_insufficient": 0,
+      "n_evaluable": 5,
+      "min_evaluable_required": 2,
+      "evaluable_fraction": 1.0,
+      "n_not_run": 0,
+      "cross_sensor_requirement_met": true,
+      "sensors_lacking_evaluable_config": [],
+      "sensor_specific": {
+        "MODIS_C61": {
+          "n_configs": 3,
+          "n_evaluable": 3,
+          "n_elevated": 3,
+          "n_not_elevated": 0,
+          "label": "elevated"
+        },
+        "VIIRS_J1_C2": {
+          "n_configs": 2,
+          "n_evaluable": 2,
+          "n_elevated": 1,
+          "n_not_elevated": 1,
+          "label": "mixed"
+        }
+      },
+      "fixture_configs": 0
+    },
+    {
+      "period": "2023-05",
+      "year": 2023,
+      "month": 5,
+      "stability_label": "classification_sensitive",
+      "n_configs_total": 5,
+      "n_elevated": 1,
+      "n_not_elevated": 4,
+      "n_insufficient": 0,
+      "n_evaluable": 5,
+      "min_evaluable_required": 2,
+      "evaluable_fraction": 1.0,
+      "n_not_run": 0,
+      "cross_sensor_requirement_met": true,
+      "sensors_lacking_evaluable_config": [],
+      "sensor_specific": {
+        "MODIS_C61": {
+          "n_configs": 3,
+          "n_evaluable": 3,
+          "n_elevated": 0,
+          "n_not_elevated": 3,
+          "label": "not_elevated"
+        },
+        "VIIRS_J1_C2": {
+          "n_configs": 2,
+          "n_evaluable": 2,
+          "n_elevated": 1,
+          "n_not_elevated": 1,
+          "label": "mixed"
+        }
+      },
+      "fixture_configs": 0
+    },
+    {
+      "period": "2023-06",
+      "year": 2023,
+      "month": 6,
+      "stability_label": "classification_sensitive",
+      "n_configs_total": 5,
+      "n_elevated": 4,
+      "n_not_elevated": 1,
+      "n_insufficient": 0,
+      "n_evaluable": 5,
+      "min_evaluable_required": 2,
+      "evaluable_fraction": 1.0,
+      "n_not_run": 0,
+      "cross_sensor_requirement_met": true,
+      "sensors_lacking_evaluable_config": [],
+      "sensor_specific": {
+        "MODIS_C61": {
+          "n_configs": 3,
+          "n_evaluable": 3,
+          "n_elevated": 3,
+          "n_not_elevated": 0,
+          "label": "elevated"
+        },
+        "VIIRS_J1_C2": {
+          "n_configs": 2,
+          "n_evaluable": 2,
+          "n_elevated": 1,
+          "n_not_elevated": 1,
+          "label": "mixed"
+        }
+      },
+      "fixture_configs": 0
+    },
+    {
+      "period": "2023-07",
+      "year": 2023,
+      "month": 7,
+      "stability_label": "not_elevated",
+      "n_configs_total": 5,
+      "n_elevated": 0,
+      "n_not_elevated": 5,
+      "n_insufficient": 0,
+      "n_evaluable": 5,
+      "min_evaluable_required": 2,
+      "evaluable_fraction": 1.0,
+      "n_not_run": 0,
+      "cross_sensor_requirement_met": true,
+      "sensors_lacking_evaluable_config": [],
+      "sensor_specific": {
+        "MODIS_C61": {
+          "n_configs": 3,
+          "n_evaluable": 3,
+          "n_elevated": 0,
+          "n_not_elevated": 3,
+          "label": "not_elevated"
+        },
+        "VIIRS_J1_C2": {
+          "n_configs": 2,
+          "n_evaluable": 2,
+          "n_elevated": 0,
+          "n_not_elevated": 2,
+          "label": "not_elevated"
+        }
+      },
+      "fixture_configs": 0
+    },
+    {
+      "period": "2023-08",
+      "year": 2023,
+      "month": 8,
+      "stability_label": "not_elevated",
+      "n_configs_total": 5,
+      "n_elevated": 0,
+      "n_not_elevated": 5,
+      "n_insufficient": 0,
+      "n_evaluable": 5,
+      "min_evaluable_required": 2,
+      "evaluable_fraction": 1.0,
+      "n_not_run": 0,
+      "cross_sensor_requirement_met": true,
+      "sensors_lacking_evaluable_config": [],
+      "sensor_specific": {
+        "MODIS_C61": {
+          "n_configs": 3,
+          "n_evaluable": 3,
+          "n_elevated": 0,
+          "n_not_elevated": 3,
+          "label": "not_elevated"
+        },
+        "VIIRS_J1_C2": {
+          "n_configs": 2,
+          "n_evaluable": 2,
+          "n_elevated": 0,
+          "n_not_elevated": 2,
+          "label": "not_elevated"
+        }
+      },
+      "fixture_configs": 0
+    },
+    {
+      "period": "2023-09",
+      "year": 2023,
+      "month": 9,
+      "stability_label": "classification_sensitive",
+      "n_configs_total": 5,
+      "n_elevated": 3,
+      "n_not_elevated": 2,
+      "n_insufficient": 0,
+      "n_evaluable": 5,
+      "min_evaluable_required": 2,
+      "evaluable_fraction": 1.0,
+      "n_not_run": 0,
+      "cross_sensor_requirement_met": true,
+      "sensors_lacking_evaluable_config": [],
+      "sensor_specific": {
+        "MODIS_C61": {
+          "n_configs": 3,
+          "n_evaluable": 3,
+          "n_elevated": 2,
+          "n_not_elevated": 1,
+          "label": "mixed"
+        },
+        "VIIRS_J1_C2": {
+          "n_configs": 2,
+          "n_evaluable": 2,
+          "n_elevated": 1,
+          "n_not_elevated": 1,
+          "label": "mixed"
+        }
+      },
+      "fixture_configs": 0
+    },
+    {
+      "period": "2023-10",
+      "year": 2023,
+      "month": 10,
+      "stability_label": "classification_sensitive",
+      "n_configs_total": 5,
+      "n_elevated": 3,
+      "n_not_elevated": 2,
+      "n_insufficient": 0,
+      "n_evaluable": 5,
+      "min_evaluable_required": 2,
+      "evaluable_fraction": 1.0,
+      "n_not_run": 0,
+      "cross_sensor_requirement_met": true,
+      "sensors_lacking_evaluable_config": [],
+      "sensor_specific": {
+        "MODIS_C61": {
+          "n_configs": 3,
+          "n_evaluable": 3,
+          "n_elevated": 1,
+          "n_not_elevated": 2,
+          "label": "mixed"
+        },
+        "VIIRS_J1_C2": {
+          "n_configs": 2,
+          "n_evaluable": 2,
+          "n_elevated": 2,
+          "n_not_elevated": 0,
+          "label": "elevated"
+        }
+      },
+      "fixture_configs": 0
+    },
+    {
+      "period": "2023-11",
+      "year": 2023,
+      "month": 11,
+      "stability_label": "classification_sensitive",
+      "n_configs_total": 5,
+      "n_elevated": 4,
+      "n_not_elevated": 1,
+      "n_insufficient": 0,
+      "n_evaluable": 5,
+      "min_evaluable_required": 2,
+      "evaluable_fraction": 1.0,
+      "n_not_run": 0,
+      "cross_sensor_requirement_met": true,
+      "sensors_lacking_evaluable_config": [],
+      "sensor_specific": {
+        "MODIS_C61": {
+          "n_configs": 3,
+          "n_evaluable": 3,
+          "n_elevated": 2,
+          "n_not_elevated": 1,
+          "label": "mixed"
+        },
+        "VIIRS_J1_C2": {
+          "n_configs": 2,
+          "n_evaluable": 2,
+          "n_elevated": 2,
+          "n_not_elevated": 0,
+          "label": "elevated"
+        }
+      },
+      "fixture_configs": 0
+    },
+    {
+      "period": "2023-12",
+      "year": 2023,
+      "month": 12,
+      "stability_label": "consistently_elevated",
+      "n_configs_total": 5,
+      "n_elevated": 5,
+      "n_not_elevated": 0,
+      "n_insufficient": 0,
+      "n_evaluable": 5,
+      "min_evaluable_required": 2,
+      "evaluable_fraction": 1.0,
+      "n_not_run": 0,
+      "cross_sensor_requirement_met": true,
+      "sensors_lacking_evaluable_config": [],
+      "sensor_specific": {
+        "MODIS_C61": {
+          "n_configs": 3,
+          "n_evaluable": 3,
+          "n_elevated": 3,
+          "n_not_elevated": 0,
+          "label": "elevated"
+        },
+        "VIIRS_J1_C2": {
+          "n_configs": 2,
+          "n_evaluable": 2,
+          "n_elevated": 2,
+          "n_not_elevated": 0,
+          "label": "elevated"
+        }
+      },
+      "fixture_configs": 0
+    },
+    {
+      "period": "2024-01",
+      "year": 2024,
+      "month": 1,
+      "stability_label": "classification_sensitive",
+      "n_configs_total": 5,
+      "n_elevated": 4,
+      "n_not_elevated": 1,
+      "n_insufficient": 0,
+      "n_evaluable": 5,
+      "min_evaluable_required": 2,
+      "evaluable_fraction": 1.0,
+      "n_not_run": 0,
+      "cross_sensor_requirement_met": true,
+      "sensors_lacking_evaluable_config": [],
+      "sensor_specific": {
+        "MODIS_C61": {
+          "n_configs": 3,
+          "n_evaluable": 3,
+          "n_elevated": 2,
+          "n_not_elevated": 1,
+          "label": "mixed"
+        },
+        "VIIRS_J1_C2": {
+          "n_configs": 2,
+          "n_evaluable": 2,
+          "n_elevated": 2,
+          "n_not_elevated": 0,
+          "label": "elevated"
+        }
+      },
+      "fixture_configs": 0
+    },
+    {
+      "period": "2024-02",
+      "year": 2024,
+      "month": 2,
+      "stability_label": "not_elevated",
+      "n_configs_total": 5,
+      "n_elevated": 0,
+      "n_not_elevated": 5,
+      "n_insufficient": 0,
+      "n_evaluable": 5,
+      "min_evaluable_required": 2,
+      "evaluable_fraction": 1.0,
+      "n_not_run": 0,
+      "cross_sensor_requirement_met": true,
+      "sensors_lacking_evaluable_config": [],
+      "sensor_specific": {
+        "MODIS_C61": {
+          "n_configs": 3,
+          "n_evaluable": 3,
+          "n_elevated": 0,
+          "n_not_elevated": 3,
+          "label": "not_elevated"
+        },
+        "VIIRS_J1_C2": {
+          "n_configs": 2,
+          "n_evaluable": 2,
+          "n_elevated": 0,
+          "n_not_elevated": 2,
+          "label": "not_elevated"
+        }
+      },
+      "fixture_configs": 0
+    },
+    {
+      "period": "2024-03",
+      "year": 2024,
+      "month": 3,
+      "stability_label": "classification_sensitive",
+      "n_configs_total": 5,
+      "n_elevated": 1,
+      "n_not_elevated": 4,
+      "n_insufficient": 0,
+      "n_evaluable": 5,
+      "min_evaluable_required": 2,
+      "evaluable_fraction": 1.0,
+      "n_not_run": 0,
+      "cross_sensor_requirement_met": true,
+      "sensors_lacking_evaluable_config": [],
+      "sensor_specific": {
+        "MODIS_C61": {
+          "n_configs": 3,
+          "n_evaluable": 3,
+          "n_elevated": 1,
+          "n_not_elevated": 2,
+          "label": "mixed"
+        },
+        "VIIRS_J1_C2": {
+          "n_configs": 2,
+          "n_evaluable": 2,
+          "n_elevated": 0,
+          "n_not_elevated": 2,
+          "label": "not_elevated"
+        }
+      },
+      "fixture_configs": 0
+    },
+    {
+      "period": "2024-04",
+      "year": 2024,
+      "month": 4,
+      "stability_label": "not_elevated",
+      "n_configs_total": 5,
+      "n_elevated": 0,
+      "n_not_elevated": 5,
+      "n_insufficient": 0,
+      "n_evaluable": 5,
+      "min_evaluable_required": 2,
+      "evaluable_fraction": 1.0,
+      "n_not_run": 0,
+      "cross_sensor_requirement_met": true,
+      "sensors_lacking_evaluable_config": [],
+      "sensor_specific": {
+        "MODIS_C61": {
+          "n_configs": 3,
+          "n_evaluable": 3,
+          "n_elevated": 0,
+          "n_not_elevated": 3,
+          "label": "not_elevated"
+        },
+        "VIIRS_J1_C2": {
+          "n_configs": 2,
+          "n_evaluable": 2,
+          "n_elevated": 0,
+          "n_not_elevated": 2,
+          "label": "not_elevated"
+        }
+      },
+      "fixture_configs": 0
+    },
+    {
+      "period": "2024-05",
+      "year": 2024,
+      "month": 5,
+      "stability_label": "not_elevated",
+      "n_configs_total": 5,
+      "n_elevated": 0,
+      "n_not_elevated": 5,
+      "n_insufficient": 0,
+      "n_evaluable": 5,
+      "min_evaluable_required": 2,
+      "evaluable_fraction": 1.0,
+      "n_not_run": 0,
+      "cross_sensor_requirement_met": true,
+      "sensors_lacking_evaluable_config": [],
+      "sensor_specific": {
+        "MODIS_C61": {
+          "n_configs": 3,
+          "n_evaluable": 3,
+          "n_elevated": 0,
+          "n_not_elevated": 3,
+          "label": "not_elevated"
+        },
+        "VIIRS_J1_C2": {
+          "n_configs": 2,
+          "n_evaluable": 2,
+          "n_elevated": 0,
+          "n_not_elevated": 2,
+          "label": "not_elevated"
+        }
+      },
+      "fixture_configs": 0
+    },
+    {
+      "period": "2024-06",
+      "year": 2024,
+      "month": 6,
+      "stability_label": "not_elevated",
+      "n_configs_total": 5,
+      "n_elevated": 0,
+      "n_not_elevated": 5,
+      "n_insufficient": 0,
+      "n_evaluable": 5,
+      "min_evaluable_required": 2,
+      "evaluable_fraction": 1.0,
+      "n_not_run": 0,
+      "cross_sensor_requirement_met": true,
+      "sensors_lacking_evaluable_config": [],
+      "sensor_specific": {
+        "MODIS_C61": {
+          "n_configs": 3,
+          "n_evaluable": 3,
+          "n_elevated": 0,
+          "n_not_elevated": 3,
+          "label": "not_elevated"
+        },
+        "VIIRS_J1_C2": {
+          "n_configs": 2,
+          "n_evaluable": 2,
+          "n_elevated": 0,
+          "n_not_elevated": 2,
+          "label": "not_elevated"
+        }
+      },
+      "fixture_configs": 0
+    },
+    {
+      "period": "2024-07",
+      "year": 2024,
+      "month": 7,
+      "stability_label": "consistently_elevated",
+      "n_configs_total": 5,
+      "n_elevated": 5,
+      "n_not_elevated": 0,
+      "n_insufficient": 0,
+      "n_evaluable": 5,
+      "min_evaluable_required": 2,
+      "evaluable_fraction": 1.0,
+      "n_not_run": 0,
+      "cross_sensor_requirement_met": true,
+      "sensors_lacking_evaluable_config": [],
+      "sensor_specific": {
+        "MODIS_C61": {
+          "n_configs": 3,
+          "n_evaluable": 3,
+          "n_elevated": 3,
+          "n_not_elevated": 0,
+          "label": "elevated"
+        },
+        "VIIRS_J1_C2": {
+          "n_configs": 2,
+          "n_evaluable": 2,
+          "n_elevated": 2,
+          "n_not_elevated": 0,
+          "label": "elevated"
+        }
+      },
+      "fixture_configs": 0
+    },
+    {
+      "period": "2024-08",
+      "year": 2024,
+      "month": 8,
+      "stability_label": "classification_sensitive",
+      "n_configs_total": 5,
+      "n_elevated": 4,
+      "n_not_elevated": 1,
+      "n_insufficient": 0,
+      "n_evaluable": 5,
+      "min_evaluable_required": 2,
+      "evaluable_fraction": 1.0,
+      "n_not_run": 0,
+      "cross_sensor_requirement_met": true,
+      "sensors_lacking_evaluable_config": [],
+      "sensor_specific": {
+        "MODIS_C61": {
+          "n_configs": 3,
+          "n_evaluable": 3,
+          "n_elevated": 2,
+          "n_not_elevated": 1,
+          "label": "mixed"
+        },
+        "VIIRS_J1_C2": {
+          "n_configs": 2,
+          "n_evaluable": 2,
+          "n_elevated": 2,
+          "n_not_elevated": 0,
+          "label": "elevated"
+        }
+      },
+      "fixture_configs": 0
+    },
+    {
+      "period": "2024-09",
+      "year": 2024,
+      "month": 9,
+      "stability_label": "not_elevated",
+      "n_configs_total": 5,
+      "n_elevated": 0,
+      "n_not_elevated": 5,
+      "n_insufficient": 0,
+      "n_evaluable": 5,
+      "min_evaluable_required": 2,
+      "evaluable_fraction": 1.0,
+      "n_not_run": 0,
+      "cross_sensor_requirement_met": true,
+      "sensors_lacking_evaluable_config": [],
+      "sensor_specific": {
+        "MODIS_C61": {
+          "n_configs": 3,
+          "n_evaluable": 3,
+          "n_elevated": 0,
+          "n_not_elevated": 3,
+          "label": "not_elevated"
+        },
+        "VIIRS_J1_C2": {
+          "n_configs": 2,
+          "n_evaluable": 2,
+          "n_elevated": 0,
+          "n_not_elevated": 2,
+          "label": "not_elevated"
+        }
+      },
+      "fixture_configs": 0
+    },
+    {
+      "period": "2024-10",
+      "year": 2024,
+      "month": 10,
+      "stability_label": "not_elevated",
+      "n_configs_total": 5,
+      "n_elevated": 0,
+      "n_not_elevated": 5,
+      "n_insufficient": 0,
+      "n_evaluable": 5,
+      "min_evaluable_required": 2,
+      "evaluable_fraction": 1.0,
+      "n_not_run": 0,
+      "cross_sensor_requirement_met": true,
+      "sensors_lacking_evaluable_config": [],
+      "sensor_specific": {
+        "MODIS_C61": {
+          "n_configs": 3,
+          "n_evaluable": 3,
+          "n_elevated": 0,
+          "n_not_elevated": 3,
+          "label": "not_elevated"
+        },
+        "VIIRS_J1_C2": {
+          "n_configs": 2,
+          "n_evaluable": 2,
+          "n_elevated": 0,
+          "n_not_elevated": 2,
+          "label": "not_elevated"
+        }
+      },
+      "fixture_configs": 0
+    },
+    {
+      "period": "2024-11",
+      "year": 2024,
+      "month": 11,
+      "stability_label": "not_elevated",
+      "n_configs_total": 5,
+      "n_elevated": 0,
+      "n_not_elevated": 5,
+      "n_insufficient": 0,
+      "n_evaluable": 5,
+      "min_evaluable_required": 2,
+      "evaluable_fraction": 1.0,
+      "n_not_run": 0,
+      "cross_sensor_requirement_met": true,
+      "sensors_lacking_evaluable_config": [],
+      "sensor_specific": {
+        "MODIS_C61": {
+          "n_configs": 3,
+          "n_evaluable": 3,
+          "n_elevated": 0,
+          "n_not_elevated": 3,
+          "label": "not_elevated"
+        },
+        "VIIRS_J1_C2": {
+          "n_configs": 2,
+          "n_evaluable": 2,
+          "n_elevated": 0,
+          "n_not_elevated": 2,
+          "label": "not_elevated"
+        }
+      },
+      "fixture_configs": 0
+    },
+    {
+      "period": "2024-12",
+      "year": 2024,
+      "month": 12,
+      "stability_label": "not_elevated",
+      "n_configs_total": 5,
+      "n_elevated": 0,
+      "n_not_elevated": 5,
+      "n_insufficient": 0,
+      "n_evaluable": 5,
+      "min_evaluable_required": 2,
+      "evaluable_fraction": 1.0,
+      "n_not_run": 0,
+      "cross_sensor_requirement_met": true,
+      "sensors_lacking_evaluable_config": [],
+      "sensor_specific": {
+        "MODIS_C61": {
+          "n_configs": 3,
+          "n_evaluable": 3,
+          "n_elevated": 0,
+          "n_not_elevated": 3,
+          "label": "not_elevated"
+        },
+        "VIIRS_J1_C2": {
+          "n_configs": 2,
+          "n_evaluable": 2,
+          "n_elevated": 0,
+          "n_not_elevated": 2,
+          "label": "not_elevated"
+        }
+      },
+      "fixture_configs": 0
+    }
+  ],
+  "limitations": [
+    "Reliability is classification stability across predefined analytical choices, not a calibrated probability of truth.",
+    "Configurations are fixed before analysis; do not add post-hoc configurations.",
+    "Insufficient evidence does not mean no fire activity; it means the data or baseline do not support a classification.",
+    "Insufficient-evidence configurations are never counted as agreement. A period is labelled consistently_elevated or not_elevated only when at least min_evaluable_required configurations produced an evaluable result.",
+    "Configurations that share a sensor are not independent (3 MODIS and 2 VIIRS configurations). Cross-sensor agreement labels therefore require at least one evaluable MODIS and one evaluable VIIRS configuration.",
+    "sensor_specific findings describe one sensor only and are not cross-sensor agreement. A sensor-specific label can rest on a single configuration.",
+    "Disagreement between sensors reflects analytical sensitivity to sensor choice; it does not show which sensor is closer to actual fire occurrence."
+  ],
+  "min_evaluable_configs": 2,
+  "is_fixture": false,
+  "fixture_warning": null
+}

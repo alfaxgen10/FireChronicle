@@ -1,0 +1,89 @@
+{
+  "manifest_version": 2,
+  "processing_version": "0.3.0",
+  "generated_at": "2026-11-15T03:44:45.510958+00:00",
+  "sensor": "MODIS_C61",
+  "files": [
+    {
+      "filename": "fire_archive_M-C61_849850.csv",
+      "path": "data/raw/modis/archive/fire_archive_M-C61_849850.csv",
+      "source_type": "archive",
+      "product_code": "M-C61",
+      "request_id": "849850",
+      "sha256": "b7da51353a5461fd65655cfc738d56fd5ea0e856ddbb452e469edd4314df6f3e",
+      "satellite_values": [
+        "Aqua",
+        "Terra"
+      ],
+      "instrument_values": [
+        "MODIS"
+      ],
+      "product_versions": [
+        "6.03",
+        "61.03"
+      ],
+      "rows_raw": 40278,
+      "rows_accepted": 40278,
+      "validation_metrics": {
+        "malformed_coordinates": 0,
+        "malformed_timestamps": 0,
+        "out_of_bbox": 0,
+        "duplicate_rows": 0,
+        "low_confidence_rows": 2306
+      },
+      "date_min": "2019-01-04",
+      "date_max": "2026-08-31",
+      "bbox_actual": [
+        101.502,
+        -4.8993,
+        105.9994,
+        -1.0
+      ],
+      "validation_errors": [],
+      "validation_warnings": [
+        "2306 low-confidence rows present (will be excluded in normalize)",
+        "rows_accepted is an upper-bound estimate; low-confidence and duplicate rows are excluded in normalize.py"
+      ]
+    },
+    {
+      "filename": "fire_nrt_M-C61_849850.csv",
+      "path": "data/raw/modis/nrt/fire_nrt_M-C61_849850.csv",
+      "source_type": "nrt",
+      "product_code": "M-C61",
+      "request_id": "849850",
+      "sha256": "5da045307aa6d2542bbae0a429f3352d588b4506e389fce5e5fd890348440e79",
+      "satellite_values": [
+        "Aqua",
+        "Terra"
+      ],
+      "instrument_values": [
+        "MODIS"
+      ],
+      "product_versions": [
+        "6.1NRT"
+      ],
+      "rows_raw": 14144,
+      "rows_accepted": 14144,
+      "validation_metrics": {
+        "malformed_coordinates": 0,
+        "malformed_timestamps": 0,
+        "out_of_bbox": 0,
+        "duplicate_rows": 0,
+        "low_confidence_rows": 720
+      },
+      "date_min": "2026-09-01",
+      "date_max": "2026-10-31",
+      "bbox_actual": [
+        101.50259,
+        -4.88644,
+        105.9996,
+        -1.00101
+      ],
+      "validation_errors": [],
+      "validation_warnings": [
+        "720 low-confidence rows present (will be excluded in normalize)",
+        "rows_accepted is an upper-bound estimate; low-confidence and duplicate rows are excluded in normalize.py"
+      ]
+    }
+  ]
+}

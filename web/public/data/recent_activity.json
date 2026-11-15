@@ -1,0 +1,1469 @@
+{
+  "recent_activity_version": "1.0.0",
+  "based_on_contract_version": "1.2.0",
+  "processing_version": "0.3.0",
+  "generated_at": "2026-11-15T08:13:42.483916+00:00",
+  "is_fixture": false,
+  "region_id": "south_sumatra",
+  "configuration": {
+    "grid_convention": "B",
+    "grid_resolution_deg": 0.25,
+    "elevated_quantile": 0.75,
+    "elevated_rule": "occupied_cell_fraction > frozen elevated_threshold",
+    "metric": "occupied_cell_fraction",
+    "quality_filters": {
+      "MODIS_C61": "confidence >= 30 (integer 0-100)",
+      "VIIRS_J1_C2": "confidence in ['h', 'high', 'n', 'nominal']"
+    },
+    "historical_rank_definition": "rank 1 to 7 among the six 2019-2024 values for the same calendar month plus this month; 1 = no historical value is higher, 7 = all six are higher; ties (equal values, compared at 6 decimals) share the higher rank."
+  },
+  "periods": {
+    "reference": {
+      "start": 2019,
+      "end": 2024,
+      "source": "calendar.json (frozen)"
+    },
+    "holdout": {
+      "year": 2025
+    },
+    "recent": {
+      "year": 2026
+    }
+  },
+  "sources": [
+    {
+      "sensor": "MODIS_C61",
+      "source_type": "archive",
+      "filename": "fire_archive_M-C61_849850.csv",
+      "path": "data/raw/modis/archive/fire_archive_M-C61_849850.csv",
+      "sha256": "b7da51353a5461fd65655cfc738d56fd5ea0e856ddbb452e469edd4314df6f3e",
+      "rows": 40278,
+      "date_min": "2019-01-04",
+      "date_max": "2026-08-31",
+      "product_versions": [
+        "6.03",
+        "61.03"
+      ]
+    },
+    {
+      "sensor": "MODIS_C61",
+      "source_type": "nrt",
+      "filename": "fire_nrt_M-C61_849850.csv",
+      "path": "data/raw/modis/nrt/fire_nrt_M-C61_849850.csv",
+      "sha256": "5da045307aa6d2542bbae0a429f3352d588b4506e389fce5e5fd890348440e79",
+      "rows": 14144,
+      "date_min": "2026-09-01",
+      "date_max": "2026-10-31",
+      "product_versions": [
+        "6.1NRT"
+      ]
+    },
+    {
+      "sensor": "VIIRS_J1_C2",
+      "source_type": "archive",
+      "filename": "fire_archive_J1V-C2_849851.csv",
+      "path": "data/raw/viirs/archive/fire_archive_J1V-C2_849851.csv",
+      "sha256": "6fcbb8326dd1f65f47ae8eecfb54a8884478f645042e6b86d4deaca4ed21062a",
+      "rows": 168566,
+      "date_min": "2019-01-01",
+      "date_max": "2026-07-31",
+      "product_versions": [
+        "2"
+      ]
+    },
+    {
+      "sensor": "VIIRS_J1_C2",
+      "source_type": "nrt",
+      "filename": "fire_nrt_J1V-C2_849851.csv",
+      "path": "data/raw/viirs/nrt/fire_nrt_J1V-C2_849851.csv",
+      "sha256": "ae93db2cbc30d6f766edd571f6844ed9f5a5da032ee3a4422de9ec4271650ff9",
+      "rows": 66575,
+      "date_min": "2026-08-01",
+      "date_max": "2026-10-31",
+      "product_versions": [
+        "2.0NRT"
+      ]
+    }
+  ],
+  "historical_reproduction_check": {
+    "MODIS_C61": {
+      "months_compared": 72,
+      "missing_periods": [],
+      "max_abs_occupied_cell_fraction_diff": 4.44e-07,
+      "detection_count_mismatches": 0,
+      "occupied_cells_mismatches": 0,
+      "has_data_mismatches": 0,
+      "passed": true
+    },
+    "VIIRS_J1_C2": {
+      "months_compared": 72,
+      "missing_periods": [],
+      "max_abs_occupied_cell_fraction_diff": 4.44e-07,
+      "detection_count_mismatches": 0,
+      "occupied_cells_mismatches": 0,
+      "has_data_mismatches": 0,
+      "passed": true
+    }
+  },
+  "sensors": {
+    "MODIS_C61": {
+      "label": "MODIS (Terra/Aqua)",
+      "source_coverage": {
+        "archive": [
+          "2019-01-04",
+          "2026-08-31"
+        ],
+        "nrt": [
+          "2026-09-01",
+          "2026-10-31"
+        ]
+      },
+      "normalization": {
+        "rows_in": 54422,
+        "excluded_low_confidence": 3026,
+        "excluded_duplicates": 0,
+        "excluded_outside_years": 0,
+        "rows_out": 51396
+      },
+      "reference": [
+        {
+          "month": 1,
+          "baseline_median": 0.055556,
+          "elevated_threshold": 0.06684,
+          "historical_values": {
+            "2019": 0.034722,
+            "2020": 0.083333,
+            "2021": 0.059028,
+            "2022": 0.052083,
+            "2023": 0.045139,
+            "2024": 0.069444
+          }
+        },
+        {
+          "month": 2,
+          "baseline_median": 0.048611,
+          "elevated_threshold": 0.0625,
+          "historical_values": {
+            "2019": 0.045139,
+            "2020": 0.065972,
+            "2021": 0.072917,
+            "2022": 0.052083,
+            "2023": 0.034722,
+            "2024": 0.017361
+          }
+        },
+        {
+          "month": 3,
+          "baseline_median": 0.090278,
+          "elevated_threshold": 0.110243,
+          "historical_values": {
+            "2019": 0.069444,
+            "2020": 0.111111,
+            "2021": 0.059028,
+            "2022": 0.190972,
+            "2023": 0.072917,
+            "2024": 0.107639
+          }
+        },
+        {
+          "month": 4,
+          "baseline_median": 0.100694,
+          "elevated_threshold": 0.132812,
+          "historical_values": {
+            "2019": 0.097222,
+            "2020": 0.142361,
+            "2021": 0.104167,
+            "2022": 0.069444,
+            "2023": 0.145833,
+            "2024": 0.069444
+          }
+        },
+        {
+          "month": 5,
+          "baseline_median": 0.159722,
+          "elevated_threshold": 0.195312,
+          "historical_values": {
+            "2019": 0.263889,
+            "2020": 0.097222,
+            "2021": 0.131944,
+            "2022": 0.197917,
+            "2023": 0.1875,
+            "2024": 0.111111
+          }
+        },
+        {
+          "month": 6,
+          "baseline_median": 0.131944,
+          "elevated_threshold": 0.157986,
+          "historical_values": {
+            "2019": 0.131944,
+            "2020": 0.131944,
+            "2021": 0.166667,
+            "2022": 0.118056,
+            "2023": 0.190972,
+            "2024": 0.118056
+          }
+        },
+        {
+          "month": 7,
+          "baseline_median": 0.3125,
+          "elevated_threshold": 0.355903,
+          "historical_values": {
+            "2019": 0.350694,
+            "2020": 0.142361,
+            "2021": 0.357639,
+            "2022": 0.211806,
+            "2023": 0.274306,
+            "2024": 0.427083
+          }
+        },
+        {
+          "month": 8,
+          "baseline_median": 0.328125,
+          "elevated_threshold": 0.407118,
+          "historical_values": {
+            "2019": 0.569444,
+            "2020": 0.21875,
+            "2021": 0.260417,
+            "2022": 0.288194,
+            "2023": 0.368056,
+            "2024": 0.420139
+          }
+        },
+        {
+          "month": 9,
+          "baseline_median": 0.388889,
+          "elevated_threshold": 0.600694,
+          "historical_values": {
+            "2019": 0.684028,
+            "2020": 0.131944,
+            "2021": 0.25,
+            "2022": 0.180556,
+            "2023": 0.625,
+            "2024": 0.527778
+          }
+        },
+        {
+          "month": 10,
+          "baseline_median": 0.361111,
+          "elevated_threshold": 0.572917,
+          "historical_values": {
+            "2019": 0.642361,
+            "2020": 0.180556,
+            "2021": 0.180556,
+            "2022": 0.041667,
+            "2023": 0.583333,
+            "2024": 0.541667
+          }
+        },
+        {
+          "month": 11,
+          "baseline_median": 0.114583,
+          "elevated_threshold": 0.288194,
+          "historical_values": {
+            "2019": 0.520833,
+            "2020": 0.086806,
+            "2021": 0.097222,
+            "2022": 0.055556,
+            "2023": 0.340278,
+            "2024": 0.131944
+          }
+        },
+        {
+          "month": 12,
+          "baseline_median": 0.107639,
+          "elevated_threshold": 0.114583,
+          "historical_values": {
+            "2019": 0.114583,
+            "2020": 0.100694,
+            "2021": 0.076389,
+            "2022": 0.045139,
+            "2023": 0.180556,
+            "2024": 0.114583
+          }
+        }
+      ],
+      "records": [
+        {
+          "sensor": "MODIS_C61",
+          "period": "2025-01",
+          "year": 2025,
+          "month": 1,
+          "period_role": "holdout",
+          "source_type": "archive",
+          "has_data": true,
+          "coverage_note": null,
+          "occupied_cell_fraction": 0.024306,
+          "baseline_median": 0.055556,
+          "elevated_threshold": 0.06684,
+          "anomaly": -0.03125,
+          "elevated": false,
+          "historical_rank": 7,
+          "n_historical_values": 6,
+          "n_historical_values_below": 0,
+          "n_historical_values_tied": 0
+        },
+        {
+          "sensor": "MODIS_C61",
+          "period": "2025-02",
+          "year": 2025,
+          "month": 2,
+          "period_role": "holdout",
+          "source_type": "archive",
+          "has_data": true,
+          "coverage_note": null,
+          "occupied_cell_fraction": 0.100694,
+          "baseline_median": 0.048611,
+          "elevated_threshold": 0.0625,
+          "anomaly": 0.052083,
+          "elevated": true,
+          "historical_rank": 1,
+          "n_historical_values": 6,
+          "n_historical_values_below": 6,
+          "n_historical_values_tied": 0
+        },
+        {
+          "sensor": "MODIS_C61",
+          "period": "2025-03",
+          "year": 2025,
+          "month": 3,
+          "period_role": "holdout",
+          "source_type": "archive",
+          "has_data": true,
+          "coverage_note": null,
+          "occupied_cell_fraction": 0.045139,
+          "baseline_median": 0.090278,
+          "elevated_threshold": 0.110243,
+          "anomaly": -0.045139,
+          "elevated": false,
+          "historical_rank": 7,
+          "n_historical_values": 6,
+          "n_historical_values_below": 0,
+          "n_historical_values_tied": 0
+        },
+        {
+          "sensor": "MODIS_C61",
+          "period": "2025-04",
+          "year": 2025,
+          "month": 4,
+          "period_role": "holdout",
+          "source_type": "archive",
+          "has_data": true,
+          "coverage_note": null,
+          "occupied_cell_fraction": 0.104167,
+          "baseline_median": 0.100694,
+          "elevated_threshold": 0.132812,
+          "anomaly": 0.003473,
+          "elevated": false,
+          "historical_rank": 3,
+          "n_historical_values": 6,
+          "n_historical_values_below": 3,
+          "n_historical_values_tied": 1
+        },
+        {
+          "sensor": "MODIS_C61",
+          "period": "2025-05",
+          "year": 2025,
+          "month": 5,
+          "period_role": "holdout",
+          "source_type": "archive",
+          "has_data": true,
+          "coverage_note": null,
+          "occupied_cell_fraction": 0.194444,
+          "baseline_median": 0.159722,
+          "elevated_threshold": 0.195312,
+          "anomaly": 0.034722,
+          "elevated": false,
+          "historical_rank": 3,
+          "n_historical_values": 6,
+          "n_historical_values_below": 4,
+          "n_historical_values_tied": 0
+        },
+        {
+          "sensor": "MODIS_C61",
+          "period": "2025-06",
+          "year": 2025,
+          "month": 6,
+          "period_role": "holdout",
+          "source_type": "archive",
+          "has_data": true,
+          "coverage_note": null,
+          "occupied_cell_fraction": 0.222222,
+          "baseline_median": 0.131944,
+          "elevated_threshold": 0.157986,
+          "anomaly": 0.090278,
+          "elevated": true,
+          "historical_rank": 1,
+          "n_historical_values": 6,
+          "n_historical_values_below": 6,
+          "n_historical_values_tied": 0
+        },
+        {
+          "sensor": "MODIS_C61",
+          "period": "2025-07",
+          "year": 2025,
+          "month": 7,
+          "period_role": "holdout",
+          "source_type": "archive",
+          "has_data": true,
+          "coverage_note": null,
+          "occupied_cell_fraction": 0.413194,
+          "baseline_median": 0.3125,
+          "elevated_threshold": 0.355903,
+          "anomaly": 0.100694,
+          "elevated": true,
+          "historical_rank": 2,
+          "n_historical_values": 6,
+          "n_historical_values_below": 5,
+          "n_historical_values_tied": 0
+        },
+        {
+          "sensor": "MODIS_C61",
+          "period": "2025-08",
+          "year": 2025,
+          "month": 8,
+          "period_role": "holdout",
+          "source_type": "archive",
+          "has_data": true,
+          "coverage_note": null,
+          "occupied_cell_fraction": 0.347222,
+          "baseline_median": 0.328125,
+          "elevated_threshold": 0.407118,
+          "anomaly": 0.019097,
+          "elevated": false,
+          "historical_rank": 4,
+          "n_historical_values": 6,
+          "n_historical_values_below": 3,
+          "n_historical_values_tied": 0
+        },
+        {
+          "sensor": "MODIS_C61",
+          "period": "2025-09",
+          "year": 2025,
+          "month": 9,
+          "period_role": "holdout",
+          "source_type": "archive",
+          "has_data": true,
+          "coverage_note": null,
+          "occupied_cell_fraction": 0.336806,
+          "baseline_median": 0.388889,
+          "elevated_threshold": 0.600694,
+          "anomaly": -0.052083,
+          "elevated": false,
+          "historical_rank": 4,
+          "n_historical_values": 6,
+          "n_historical_values_below": 3,
+          "n_historical_values_tied": 0
+        },
+        {
+          "sensor": "MODIS_C61",
+          "period": "2025-10",
+          "year": 2025,
+          "month": 10,
+          "period_role": "holdout",
+          "source_type": "archive",
+          "has_data": true,
+          "coverage_note": null,
+          "occupied_cell_fraction": 0.246528,
+          "baseline_median": 0.361111,
+          "elevated_threshold": 0.572917,
+          "anomaly": -0.114583,
+          "elevated": false,
+          "historical_rank": 4,
+          "n_historical_values": 6,
+          "n_historical_values_below": 3,
+          "n_historical_values_tied": 0
+        },
+        {
+          "sensor": "MODIS_C61",
+          "period": "2025-11",
+          "year": 2025,
+          "month": 11,
+          "period_role": "holdout",
+          "source_type": "archive",
+          "has_data": true,
+          "coverage_note": null,
+          "occupied_cell_fraction": 0.194444,
+          "baseline_median": 0.114583,
+          "elevated_threshold": 0.288194,
+          "anomaly": 0.079861,
+          "elevated": false,
+          "historical_rank": 3,
+          "n_historical_values": 6,
+          "n_historical_values_below": 4,
+          "n_historical_values_tied": 0
+        },
+        {
+          "sensor": "MODIS_C61",
+          "period": "2025-12",
+          "year": 2025,
+          "month": 12,
+          "period_role": "holdout",
+          "source_type": "archive",
+          "has_data": true,
+          "coverage_note": null,
+          "occupied_cell_fraction": 0.041667,
+          "baseline_median": 0.107639,
+          "elevated_threshold": 0.114583,
+          "anomaly": -0.065972,
+          "elevated": false,
+          "historical_rank": 7,
+          "n_historical_values": 6,
+          "n_historical_values_below": 0,
+          "n_historical_values_tied": 0
+        },
+        {
+          "sensor": "MODIS_C61",
+          "period": "2026-01",
+          "year": 2026,
+          "month": 1,
+          "period_role": "recent",
+          "source_type": "archive",
+          "has_data": true,
+          "coverage_note": null,
+          "occupied_cell_fraction": 0.104167,
+          "baseline_median": 0.055556,
+          "elevated_threshold": 0.06684,
+          "anomaly": 0.048611,
+          "elevated": true,
+          "historical_rank": 1,
+          "n_historical_values": 6,
+          "n_historical_values_below": 6,
+          "n_historical_values_tied": 0
+        },
+        {
+          "sensor": "MODIS_C61",
+          "period": "2026-02",
+          "year": 2026,
+          "month": 2,
+          "period_role": "recent",
+          "source_type": "archive",
+          "has_data": true,
+          "coverage_note": null,
+          "occupied_cell_fraction": 0.065972,
+          "baseline_median": 0.048611,
+          "elevated_threshold": 0.0625,
+          "anomaly": 0.017361,
+          "elevated": true,
+          "historical_rank": 2,
+          "n_historical_values": 6,
+          "n_historical_values_below": 4,
+          "n_historical_values_tied": 1
+        },
+        {
+          "sensor": "MODIS_C61",
+          "period": "2026-03",
+          "year": 2026,
+          "month": 3,
+          "period_role": "recent",
+          "source_type": "archive",
+          "has_data": true,
+          "coverage_note": null,
+          "occupied_cell_fraction": 0.159722,
+          "baseline_median": 0.090278,
+          "elevated_threshold": 0.110243,
+          "anomaly": 0.069444,
+          "elevated": true,
+          "historical_rank": 2,
+          "n_historical_values": 6,
+          "n_historical_values_below": 5,
+          "n_historical_values_tied": 0
+        },
+        {
+          "sensor": "MODIS_C61",
+          "period": "2026-04",
+          "year": 2026,
+          "month": 4,
+          "period_role": "recent",
+          "source_type": "archive",
+          "has_data": true,
+          "coverage_note": null,
+          "occupied_cell_fraction": 0.104167,
+          "baseline_median": 0.100694,
+          "elevated_threshold": 0.132812,
+          "anomaly": 0.003473,
+          "elevated": false,
+          "historical_rank": 3,
+          "n_historical_values": 6,
+          "n_historical_values_below": 3,
+          "n_historical_values_tied": 1
+        },
+        {
+          "sensor": "MODIS_C61",
+          "period": "2026-05",
+          "year": 2026,
+          "month": 5,
+          "period_role": "recent",
+          "source_type": "archive",
+          "has_data": true,
+          "coverage_note": null,
+          "occupied_cell_fraction": 0.225694,
+          "baseline_median": 0.159722,
+          "elevated_threshold": 0.195312,
+          "anomaly": 0.065972,
+          "elevated": true,
+          "historical_rank": 2,
+          "n_historical_values": 6,
+          "n_historical_values_below": 5,
+          "n_historical_values_tied": 0
+        },
+        {
+          "sensor": "MODIS_C61",
+          "period": "2026-06",
+          "year": 2026,
+          "month": 6,
+          "period_role": "recent",
+          "source_type": "archive",
+          "has_data": true,
+          "coverage_note": null,
+          "occupied_cell_fraction": 0.253472,
+          "baseline_median": 0.131944,
+          "elevated_threshold": 0.157986,
+          "anomaly": 0.121528,
+          "elevated": true,
+          "historical_rank": 1,
+          "n_historical_values": 6,
+          "n_historical_values_below": 6,
+          "n_historical_values_tied": 0
+        },
+        {
+          "sensor": "MODIS_C61",
+          "period": "2026-07",
+          "year": 2026,
+          "month": 7,
+          "period_role": "recent",
+          "source_type": "archive",
+          "has_data": true,
+          "coverage_note": null,
+          "occupied_cell_fraction": 0.423611,
+          "baseline_median": 0.3125,
+          "elevated_threshold": 0.355903,
+          "anomaly": 0.111111,
+          "elevated": true,
+          "historical_rank": 2,
+          "n_historical_values": 6,
+          "n_historical_values_below": 5,
+          "n_historical_values_tied": 0
+        },
+        {
+          "sensor": "MODIS_C61",
+          "period": "2026-08",
+          "year": 2026,
+          "month": 8,
+          "period_role": "recent",
+          "source_type": "archive",
+          "has_data": true,
+          "coverage_note": null,
+          "occupied_cell_fraction": 0.659722,
+          "baseline_median": 0.328125,
+          "elevated_threshold": 0.407118,
+          "anomaly": 0.331597,
+          "elevated": true,
+          "historical_rank": 1,
+          "n_historical_values": 6,
+          "n_historical_values_below": 6,
+          "n_historical_values_tied": 0
+        },
+        {
+          "sensor": "MODIS_C61",
+          "period": "2026-09",
+          "year": 2026,
+          "month": 9,
+          "period_role": "recent",
+          "source_type": "nrt",
+          "has_data": true,
+          "coverage_note": null,
+          "occupied_cell_fraction": 0.694444,
+          "baseline_median": 0.388889,
+          "elevated_threshold": 0.600694,
+          "anomaly": 0.305555,
+          "elevated": true,
+          "historical_rank": 1,
+          "n_historical_values": 6,
+          "n_historical_values_below": 6,
+          "n_historical_values_tied": 0
+        },
+        {
+          "sensor": "MODIS_C61",
+          "period": "2026-10",
+          "year": 2026,
+          "month": 10,
+          "period_role": "recent",
+          "source_type": "nrt",
+          "has_data": true,
+          "coverage_note": null,
+          "occupied_cell_fraction": 0.607639,
+          "baseline_median": 0.361111,
+          "elevated_threshold": 0.572917,
+          "anomaly": 0.246528,
+          "elevated": true,
+          "historical_rank": 2,
+          "n_historical_values": 6,
+          "n_historical_values_below": 5,
+          "n_historical_values_tied": 0
+        },
+        {
+          "sensor": "MODIS_C61",
+          "period": "2026-11",
+          "year": 2026,
+          "month": 11,
+          "period_role": "recent",
+          "source_type": null,
+          "has_data": false,
+          "coverage_note": "outside_downloaded_source_coverage",
+          "occupied_cell_fraction": null,
+          "baseline_median": 0.114583,
+          "elevated_threshold": 0.288194,
+          "anomaly": null,
+          "elevated": null,
+          "historical_rank": null,
+          "n_historical_values": 6,
+          "n_historical_values_below": null,
+          "n_historical_values_tied": null
+        },
+        {
+          "sensor": "MODIS_C61",
+          "period": "2026-12",
+          "year": 2026,
+          "month": 12,
+          "period_role": "recent",
+          "source_type": null,
+          "has_data": false,
+          "coverage_note": "outside_downloaded_source_coverage",
+          "occupied_cell_fraction": null,
+          "baseline_median": 0.107639,
+          "elevated_threshold": 0.114583,
+          "anomaly": null,
+          "elevated": null,
+          "historical_rank": null,
+          "n_historical_values": 6,
+          "n_historical_values_below": null,
+          "n_historical_values_tied": null
+        }
+      ]
+    },
+    "VIIRS_J1_C2": {
+      "label": "VIIRS (NOAA-20)",
+      "source_coverage": {
+        "archive": [
+          "2019-01-01",
+          "2026-07-31"
+        ],
+        "nrt": [
+          "2026-08-01",
+          "2026-10-31"
+        ]
+      },
+      "normalization": {
+        "rows_in": 235141,
+        "excluded_low_confidence": 11103,
+        "excluded_duplicates": 0,
+        "excluded_outside_years": 0,
+        "rows_out": 224038
+      },
+      "reference": [
+        {
+          "month": 1,
+          "baseline_median": 0.208333,
+          "elevated_threshold": 0.244792,
+          "historical_values": {
+            "2019": 0.208333,
+            "2020": 0.28125,
+            "2021": 0.184028,
+            "2022": 0.201389,
+            "2023": 0.208333,
+            "2024": 0.256944
+          }
+        },
+        {
+          "month": 2,
+          "baseline_median": 0.265625,
+          "elevated_threshold": 0.310764,
+          "historical_values": {
+            "2019": 0.197917,
+            "2020": 0.225694,
+            "2021": 0.305556,
+            "2022": 0.322917,
+            "2023": 0.3125,
+            "2024": 0.170139
+          }
+        },
+        {
+          "month": 3,
+          "baseline_median": 0.328125,
+          "elevated_threshold": 0.373264,
+          "historical_values": {
+            "2019": 0.319444,
+            "2020": 0.385417,
+            "2021": 0.229167,
+            "2022": 0.385417,
+            "2023": 0.256944,
+            "2024": 0.336806
+          }
+        },
+        {
+          "month": 4,
+          "baseline_median": 0.321181,
+          "elevated_threshold": 0.382812,
+          "historical_values": {
+            "2019": 0.34375,
+            "2020": 0.298611,
+            "2021": 0.28125,
+            "2022": 0.395833,
+            "2023": 0.440972,
+            "2024": 0.239583
+          }
+        },
+        {
+          "month": 5,
+          "baseline_median": 0.40625,
+          "elevated_threshold": 0.471354,
+          "historical_values": {
+            "2019": 0.479167,
+            "2020": 0.298611,
+            "2021": 0.364583,
+            "2022": 0.486111,
+            "2023": 0.447917,
+            "2024": 0.354167
+          }
+        },
+        {
+          "month": 6,
+          "baseline_median": 0.394097,
+          "elevated_threshold": 0.436632,
+          "historical_values": {
+            "2019": 0.402778,
+            "2020": 0.385417,
+            "2021": 0.447917,
+            "2022": 0.381944,
+            "2023": 0.454861,
+            "2024": 0.315972
+          }
+        },
+        {
+          "month": 7,
+          "baseline_median": 0.5625,
+          "elevated_threshold": 0.668403,
+          "historical_values": {
+            "2019": 0.697917,
+            "2020": 0.447917,
+            "2021": 0.621528,
+            "2022": 0.503472,
+            "2023": 0.475694,
+            "2024": 0.684028
+          }
+        },
+        {
+          "month": 8,
+          "baseline_median": 0.637153,
+          "elevated_threshold": 0.700521,
+          "historical_values": {
+            "2019": 0.788194,
+            "2020": 0.607639,
+            "2021": 0.493056,
+            "2022": 0.520833,
+            "2023": 0.666667,
+            "2024": 0.711806
+          }
+        },
+        {
+          "month": 9,
+          "baseline_median": 0.605903,
+          "elevated_threshold": 0.759549,
+          "historical_values": {
+            "2019": 0.8125,
+            "2020": 0.465278,
+            "2021": 0.506944,
+            "2022": 0.489583,
+            "2023": 0.777778,
+            "2024": 0.704861
+          }
+        },
+        {
+          "month": 10,
+          "baseline_median": 0.616319,
+          "elevated_threshold": 0.764757,
+          "historical_values": {
+            "2019": 0.788194,
+            "2020": 0.4375,
+            "2021": 0.496528,
+            "2022": 0.211806,
+            "2023": 0.774306,
+            "2024": 0.736111
+          }
+        },
+        {
+          "month": 11,
+          "baseline_median": 0.321181,
+          "elevated_threshold": 0.549479,
+          "historical_values": {
+            "2019": 0.756944,
+            "2020": 0.319444,
+            "2021": 0.267361,
+            "2022": 0.322917,
+            "2023": 0.625,
+            "2024": 0.315972
+          }
+        },
+        {
+          "month": 12,
+          "baseline_median": 0.350694,
+          "elevated_threshold": 0.399306,
+          "historical_values": {
+            "2019": 0.413194,
+            "2020": 0.295139,
+            "2021": 0.357639,
+            "2022": 0.222222,
+            "2023": 0.423611,
+            "2024": 0.34375
+          }
+        }
+      ],
+      "records": [
+        {
+          "sensor": "VIIRS_J1_C2",
+          "period": "2025-01",
+          "year": 2025,
+          "month": 1,
+          "period_role": "holdout",
+          "source_type": "archive",
+          "has_data": true,
+          "coverage_note": null,
+          "occupied_cell_fraction": 0.145833,
+          "baseline_median": 0.208333,
+          "elevated_threshold": 0.244792,
+          "anomaly": -0.0625,
+          "elevated": false,
+          "historical_rank": 7,
+          "n_historical_values": 6,
+          "n_historical_values_below": 0,
+          "n_historical_values_tied": 0
+        },
+        {
+          "sensor": "VIIRS_J1_C2",
+          "period": "2025-02",
+          "year": 2025,
+          "month": 2,
+          "period_role": "holdout",
+          "source_type": "archive",
+          "has_data": true,
+          "coverage_note": null,
+          "occupied_cell_fraction": 0.263889,
+          "baseline_median": 0.265625,
+          "elevated_threshold": 0.310764,
+          "anomaly": -0.001736,
+          "elevated": false,
+          "historical_rank": 4,
+          "n_historical_values": 6,
+          "n_historical_values_below": 3,
+          "n_historical_values_tied": 0
+        },
+        {
+          "sensor": "VIIRS_J1_C2",
+          "period": "2025-03",
+          "year": 2025,
+          "month": 3,
+          "period_role": "holdout",
+          "source_type": "archive",
+          "has_data": true,
+          "coverage_note": null,
+          "occupied_cell_fraction": 0.15625,
+          "baseline_median": 0.328125,
+          "elevated_threshold": 0.373264,
+          "anomaly": -0.171875,
+          "elevated": false,
+          "historical_rank": 7,
+          "n_historical_values": 6,
+          "n_historical_values_below": 0,
+          "n_historical_values_tied": 0
+        },
+        {
+          "sensor": "VIIRS_J1_C2",
+          "period": "2025-04",
+          "year": 2025,
+          "month": 4,
+          "period_role": "holdout",
+          "source_type": "archive",
+          "has_data": true,
+          "coverage_note": null,
+          "occupied_cell_fraction": 0.243056,
+          "baseline_median": 0.321181,
+          "elevated_threshold": 0.382812,
+          "anomaly": -0.078125,
+          "elevated": false,
+          "historical_rank": 6,
+          "n_historical_values": 6,
+          "n_historical_values_below": 1,
+          "n_historical_values_tied": 0
+        },
+        {
+          "sensor": "VIIRS_J1_C2",
+          "period": "2025-05",
+          "year": 2025,
+          "month": 5,
+          "period_role": "holdout",
+          "source_type": "archive",
+          "has_data": true,
+          "coverage_note": null,
+          "occupied_cell_fraction": 0.475694,
+          "baseline_median": 0.40625,
+          "elevated_threshold": 0.471354,
+          "anomaly": 0.069444,
+          "elevated": true,
+          "historical_rank": 3,
+          "n_historical_values": 6,
+          "n_historical_values_below": 4,
+          "n_historical_values_tied": 0
+        },
+        {
+          "sensor": "VIIRS_J1_C2",
+          "period": "2025-06",
+          "year": 2025,
+          "month": 6,
+          "period_role": "holdout",
+          "source_type": "archive",
+          "has_data": true,
+          "coverage_note": null,
+          "occupied_cell_fraction": 0.472222,
+          "baseline_median": 0.394097,
+          "elevated_threshold": 0.436632,
+          "anomaly": 0.078125,
+          "elevated": true,
+          "historical_rank": 1,
+          "n_historical_values": 6,
+          "n_historical_values_below": 6,
+          "n_historical_values_tied": 0
+        },
+        {
+          "sensor": "VIIRS_J1_C2",
+          "period": "2025-07",
+          "year": 2025,
+          "month": 7,
+          "period_role": "holdout",
+          "source_type": "archive",
+          "has_data": true,
+          "coverage_note": null,
+          "occupied_cell_fraction": 0.642361,
+          "baseline_median": 0.5625,
+          "elevated_threshold": 0.668403,
+          "anomaly": 0.079861,
+          "elevated": false,
+          "historical_rank": 3,
+          "n_historical_values": 6,
+          "n_historical_values_below": 4,
+          "n_historical_values_tied": 0
+        },
+        {
+          "sensor": "VIIRS_J1_C2",
+          "period": "2025-08",
+          "year": 2025,
+          "month": 8,
+          "period_role": "holdout",
+          "source_type": "archive",
+          "has_data": true,
+          "coverage_note": null,
+          "occupied_cell_fraction": 0.555556,
+          "baseline_median": 0.637153,
+          "elevated_threshold": 0.700521,
+          "anomaly": -0.081597,
+          "elevated": false,
+          "historical_rank": 5,
+          "n_historical_values": 6,
+          "n_historical_values_below": 2,
+          "n_historical_values_tied": 0
+        },
+        {
+          "sensor": "VIIRS_J1_C2",
+          "period": "2025-09",
+          "year": 2025,
+          "month": 9,
+          "period_role": "holdout",
+          "source_type": "archive",
+          "has_data": true,
+          "coverage_note": null,
+          "occupied_cell_fraction": 0.555556,
+          "baseline_median": 0.605903,
+          "elevated_threshold": 0.759549,
+          "anomaly": -0.050347,
+          "elevated": false,
+          "historical_rank": 4,
+          "n_historical_values": 6,
+          "n_historical_values_below": 3,
+          "n_historical_values_tied": 0
+        },
+        {
+          "sensor": "VIIRS_J1_C2",
+          "period": "2025-10",
+          "year": 2025,
+          "month": 10,
+          "period_role": "holdout",
+          "source_type": "archive",
+          "has_data": true,
+          "coverage_note": null,
+          "occupied_cell_fraction": 0.572917,
+          "baseline_median": 0.616319,
+          "elevated_threshold": 0.764757,
+          "anomaly": -0.043402,
+          "elevated": false,
+          "historical_rank": 4,
+          "n_historical_values": 6,
+          "n_historical_values_below": 3,
+          "n_historical_values_tied": 0
+        },
+        {
+          "sensor": "VIIRS_J1_C2",
+          "period": "2025-11",
+          "year": 2025,
+          "month": 11,
+          "period_role": "holdout",
+          "source_type": "archive",
+          "has_data": true,
+          "coverage_note": null,
+          "occupied_cell_fraction": 0.395833,
+          "baseline_median": 0.321181,
+          "elevated_threshold": 0.549479,
+          "anomaly": 0.074652,
+          "elevated": false,
+          "historical_rank": 3,
+          "n_historical_values": 6,
+          "n_historical_values_below": 4,
+          "n_historical_values_tied": 0
+        },
+        {
+          "sensor": "VIIRS_J1_C2",
+          "period": "2025-12",
+          "year": 2025,
+          "month": 12,
+          "period_role": "holdout",
+          "source_type": "archive",
+          "has_data": true,
+          "coverage_note": null,
+          "occupied_cell_fraction": 0.180556,
+          "baseline_median": 0.350694,
+          "elevated_threshold": 0.399306,
+          "anomaly": -0.170138,
+          "elevated": false,
+          "historical_rank": 7,
+          "n_historical_values": 6,
+          "n_historical_values_below": 0,
+          "n_historical_values_tied": 0
+        },
+        {
+          "sensor": "VIIRS_J1_C2",
+          "period": "2026-01",
+          "year": 2026,
+          "month": 1,
+          "period_role": "recent",
+          "source_type": "archive",
+          "has_data": true,
+          "coverage_note": null,
+          "occupied_cell_fraction": 0.291667,
+          "baseline_median": 0.208333,
+          "elevated_threshold": 0.244792,
+          "anomaly": 0.083334,
+          "elevated": true,
+          "historical_rank": 1,
+          "n_historical_values": 6,
+          "n_historical_values_below": 6,
+          "n_historical_values_tied": 0
+        },
+        {
+          "sensor": "VIIRS_J1_C2",
+          "period": "2026-02",
+          "year": 2026,
+          "month": 2,
+          "period_role": "recent",
+          "source_type": "archive",
+          "has_data": true,
+          "coverage_note": null,
+          "occupied_cell_fraction": 0.194444,
+          "baseline_median": 0.265625,
+          "elevated_threshold": 0.310764,
+          "anomaly": -0.071181,
+          "elevated": false,
+          "historical_rank": 6,
+          "n_historical_values": 6,
+          "n_historical_values_below": 1,
+          "n_historical_values_tied": 0
+        },
+        {
+          "sensor": "VIIRS_J1_C2",
+          "period": "2026-03",
+          "year": 2026,
+          "month": 3,
+          "period_role": "recent",
+          "source_type": "archive",
+          "has_data": true,
+          "coverage_note": null,
+          "occupied_cell_fraction": 0.413194,
+          "baseline_median": 0.328125,
+          "elevated_threshold": 0.373264,
+          "anomaly": 0.085069,
+          "elevated": true,
+          "historical_rank": 1,
+          "n_historical_values": 6,
+          "n_historical_values_below": 6,
+          "n_historical_values_tied": 0
+        },
+        {
+          "sensor": "VIIRS_J1_C2",
+          "period": "2026-04",
+          "year": 2026,
+          "month": 4,
+          "period_role": "recent",
+          "source_type": "archive",
+          "has_data": true,
+          "coverage_note": null,
+          "occupied_cell_fraction": 0.336806,
+          "baseline_median": 0.321181,
+          "elevated_threshold": 0.382812,
+          "anomaly": 0.015625,
+          "elevated": false,
+          "historical_rank": 4,
+          "n_historical_values": 6,
+          "n_historical_values_below": 3,
+          "n_historical_values_tied": 0
+        },
+        {
+          "sensor": "VIIRS_J1_C2",
+          "period": "2026-05",
+          "year": 2026,
+          "month": 5,
+          "period_role": "recent",
+          "source_type": "archive",
+          "has_data": true,
+          "coverage_note": null,
+          "occupied_cell_fraction": 0.423611,
+          "baseline_median": 0.40625,
+          "elevated_threshold": 0.471354,
+          "anomaly": 0.017361,
+          "elevated": false,
+          "historical_rank": 4,
+          "n_historical_values": 6,
+          "n_historical_values_below": 3,
+          "n_historical_values_tied": 0
+        },
+        {
+          "sensor": "VIIRS_J1_C2",
+          "period": "2026-06",
+          "year": 2026,
+          "month": 6,
+          "period_role": "recent",
+          "source_type": "archive",
+          "has_data": true,
+          "coverage_note": null,
+          "occupied_cell_fraction": 0.559028,
+          "baseline_median": 0.394097,
+          "elevated_threshold": 0.436632,
+          "anomaly": 0.164931,
+          "elevated": true,
+          "historical_rank": 1,
+          "n_historical_values": 6,
+          "n_historical_values_below": 6,
+          "n_historical_values_tied": 0
+        },
+        {
+          "sensor": "VIIRS_J1_C2",
+          "period": "2026-07",
+          "year": 2026,
+          "month": 7,
+          "period_role": "recent",
+          "source_type": "archive",
+          "has_data": true,
+          "coverage_note": null,
+          "occupied_cell_fraction": 0.680556,
+          "baseline_median": 0.5625,
+          "elevated_threshold": 0.668403,
+          "anomaly": 0.118056,
+          "elevated": true,
+          "historical_rank": 3,
+          "n_historical_values": 6,
+          "n_historical_values_below": 4,
+          "n_historical_values_tied": 0
+        },
+        {
+          "sensor": "VIIRS_J1_C2",
+          "period": "2026-08",
+          "year": 2026,
+          "month": 8,
+          "period_role": "recent",
+          "source_type": "nrt",
+          "has_data": true,
+          "coverage_note": null,
+          "occupied_cell_fraction": 0.795139,
+          "baseline_median": 0.637153,
+          "elevated_threshold": 0.700521,
+          "anomaly": 0.157986,
+          "elevated": true,
+          "historical_rank": 1,
+          "n_historical_values": 6,
+          "n_historical_values_below": 6,
+          "n_historical_values_tied": 0
+        },
+        {
+          "sensor": "VIIRS_J1_C2",
+          "period": "2026-09",
+          "year": 2026,
+          "month": 9,
+          "period_role": "recent",
+          "source_type": "nrt",
+          "has_data": true,
+          "coverage_note": null,
+          "occupied_cell_fraction": 0.809028,
+          "baseline_median": 0.605903,
+          "elevated_threshold": 0.759549,
+          "anomaly": 0.203125,
+          "elevated": true,
+          "historical_rank": 2,
+          "n_historical_values": 6,
+          "n_historical_values_below": 5,
+          "n_historical_values_tied": 0
+        },
+        {
+          "sensor": "VIIRS_J1_C2",
+          "period": "2026-10",
+          "year": 2026,
+          "month": 10,
+          "period_role": "recent",
+          "source_type": "nrt",
+          "has_data": true,
+          "coverage_note": null,
+          "occupied_cell_fraction": 0.791667,
+          "baseline_median": 0.616319,
+          "elevated_threshold": 0.764757,
+          "anomaly": 0.175348,
+          "elevated": true,
+          "historical_rank": 1,
+          "n_historical_values": 6,
+          "n_historical_values_below": 6,
+          "n_historical_values_tied": 0
+        },
+        {
+          "sensor": "VIIRS_J1_C2",
+          "period": "2026-11",
+          "year": 2026,
+          "month": 11,
+          "period_role": "recent",
+          "source_type": null,
+          "has_data": false,
+          "coverage_note": "outside_downloaded_source_coverage",
+          "occupied_cell_fraction": null,
+          "baseline_median": 0.321181,
+          "elevated_threshold": 0.549479,
+          "anomaly": null,
+          "elevated": null,
+          "historical_rank": null,
+          "n_historical_values": 6,
+          "n_historical_values_below": null,
+          "n_historical_values_tied": null
+        },
+        {
+          "sensor": "VIIRS_J1_C2",
+          "period": "2026-12",
+          "year": 2026,
+          "month": 12,
+          "period_role": "recent",
+          "source_type": null,
+          "has_data": false,
+          "coverage_note": "outside_downloaded_source_coverage",
+          "occupied_cell_fraction": null,
+          "baseline_median": 0.350694,
+          "elevated_threshold": 0.399306,
+          "anomaly": null,
+          "elevated": null,
+          "historical_rank": null,
+          "n_historical_values": 6,
+          "n_historical_values_below": null,
+          "n_historical_values_tied": null
+        }
+      ]
+    }
+  },
+  "summary": {
+    "by_sensor": {
+      "MODIS_C61": {
+        "2025": {
+          "months_with_data": 12,
+          "months_missing": [],
+          "n_elevated": 3,
+          "elevated_months": [
+            2,
+            6,
+            7
+          ]
+        },
+        "2026": {
+          "months_with_data": 10,
+          "months_missing": [
+            11,
+            12
+          ],
+          "n_elevated": 9,
+          "elevated_months": [
+            1,
+            2,
+            3,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ]
+        }
+      },
+      "VIIRS_J1_C2": {
+        "2025": {
+          "months_with_data": 12,
+          "months_missing": [],
+          "n_elevated": 2,
+          "elevated_months": [
+            5,
+            6
+          ]
+        },
+        "2026": {
+          "months_with_data": 10,
+          "months_missing": [
+            11,
+            12
+          ],
+          "n_elevated": 7,
+          "elevated_months": [
+            1,
+            3,
+            6,
+            7,
+            8,
+            9,
+            10
+          ]
+        }
+      }
+    },
+    "both_sensors_elevated": {
+      "2025": [
+        6
+      ],
+      "2026": [
+        1,
+        3,
+        6,
+        7,
+        8,
+        9,
+        10
+      ]
+    }
+  },
+  "limitations": [
+    "Descriptive comparison of an activity index with six historical years (2019–2024) for the same calendar month; not a statistical test, forecast or validated prediction.",
+    "Thresholds and medians are frozen at the released 2019–2024 values; 2025 and 2026 observations never enter them.",
+    "Elevated means the occupied-cell fraction exceeded the frozen 75th-percentile threshold. It does not show that the number of fires, burned area or damage increased.",
+    "MODIS and VIIRS are compared with their own references only. Values are not calibrated to each other and must not be pooled or compared as equivalent fire counts.",
+    "Archive and NRT (near-real-time) files are processed with the same rules but are different FIRMS products; NRT records are not reprocessed like archive records, so NRT months are less comparable with the archive-based reference.",
+    "Missing months (outside the downloaded files) are null and are not zero activity. FIRMS lists detections only; days without detections are not observation coverage.",
+    "Primary configuration only (Convention B, 0.25 degree, q = 0.75). The five-configuration reliability labels are not computed for 2025 or 2026.",
+    "Study area is the rectangular South Sumatra-region pilot AOI, not verified against provincial boundaries; partial southern boundary cells count as full cells."
+  ]
+}

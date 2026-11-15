@@ -1,0 +1,67 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+*.whl
+.venv/
+venv/
+env/
+ENV/
+.env
+
+# Large data files — raw NASA downloads are not committed
+data/raw/
+nasa_downloads/
+data/processed/*.parquet
+data/processed/*.duckdb
+*.parquet
+*.duckdb
+*.csv
+
+# Keep fixtures and manifests
+!data/fixtures/
+!data/fixtures/*.csv
+!data/manifests/
+
+# pytest / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+coverage.xml
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Node / frontend
+node_modules/
+web/node_modules/
+web/dist/
+web/.vite/
+web/.env
+web/.env.local
+
+# Secrets — never commit
+*.key
+*.pem
+*.secret
+.env*
+!.env.example
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
